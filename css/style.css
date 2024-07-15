@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ----- global ----- */
+
+.loading-indicator {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 25px;
+    color: #333;
+}
+
+#loading-indicator {
+  display: block; /* Initially display loading indicator */
+}
+
+.loaded #loading-indicator {
+  display: none; /* Hide loading indicator when content is loaded */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "karla", sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+/* ----- header ----- */
+
+.top-container {
+    position: relative;
+    width: 100%;
+}
+
+.top-image {
+    background-image: url('../images/backgroundimage_11zon.jpg'); /* Path to the image */
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    height: 200px; /* Set a height for the top image */
+    width: 100%;
+}
+
+.top-heading {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the element */
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 600;
+}
+
+header {
+    width: 100%;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
+}
+
+/* ----- nav ----- */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Navbar background color */
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    display: inline;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.navbar-toggle {
+    display: none; /* Hide mobile menu button by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.search-bar {
+    max-width: 200px;
+}
+
+/* ----- home page - carousel section ----- */
+
+.carousel-header {
+  margin: 30px auto; /* Add space between the heading and the carousel */
+  text-align: center;
+  justify-items: center;
+  font-size: 40px; /* Adjust font size */
+  color: #333; /* Adjust text color */
+}
+
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the carousel */
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 80%;
+  margin: 40px auto; /* Center the carousel within the container */
+}
+
+.carousel-track {
+  display: flex;
+  gap: 10px; /* Equal space between items */
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+  flex: 1;
+  min-width: 25%; /* Show 4 items at a time */
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.carousel-item img {
+  width: 200px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  object-fit: cover; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+
+.carousel-item h3 {
+  margin-top: 10px; /* Space between image and title */
+  font-size: 16px; /* Adjust as needed */
+  line-height: 1.4;
+}
+
+.carousel-arrow {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.left-arrow {
+  left: 0;
+}
+
+.right-arrow {
+  right: 0;
+}
+
+
+  
+  /* ----- blogposts ----- */
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .post, .singlepost-container {
+    width: 100%;
+    max-width: 800px; /* Control the max width of each post */
+    margin-bottom: 25px; /* Space between posts */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+   .post h4 {
+    font-size: 25px;
+    text-align: center;
+  }
+  
+  .post .featured-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0; /* Space around the image */
+  }
+
+  .singlepost-container img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0; /* Space around the image */
+  }
+
+  .post-text {
+    grid-column: 1;
+  }
+  
+  .singlepost-container {
+    margin: auto;
+  }
+
+/* ----- singleblogposts ----- */
+
+/* .wp-block-image{
+  display: grid;
+  grid-template-columns: 1fr;
+  box-sizing: border-box;
+  padding: 30px;
+} */
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* ----- contact ----- */
+
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    margin: 10px auto;
+    width: 100%;
+    padding: 8px 0px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+
+/* ----- about -----*/
+
+/* Main container styling */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.container-two {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.p-one, .p-two, .p-three {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  line-height: 2rem;
+}
+
+.p-one {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* Individual sections styling */
+.container-one, .container-two, .container-three {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.social-media-list li {
+  display: block; /* Make each item block-level */
+  margin: 10px 0; /* Add some space between items */
+  font-style: normal; /* Prevent italics from i tag */
+  line-height: 2.2rem;
+  word-spacing: 0.2rem;
+}
+
+
+.about-container {
+  line-height: 3rem;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+/* Image styling */
+.about-images img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+
+/* ----- buttons -----*/
+
+.more-posts-button, .custom-back-button, .submit-button, .read-more-button {
+    padding: 10px 20px;
+    margin: 10px auto 20px;
+    border: #333 solid 1px,;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+.submit-button {
+    display: block;
+}
+
+.more-posts-button:hover,
+.custom-back-button:hover,
+.submit-button:hover,
+.read-more-button:hover 
+{
+    background-color: #DBD7D3;
+}
+
+.hide-posts-button {
+    position: fixed;
+    bottom: 10px; 
+    left: 50%; /* Position it in the center */
+    transform: translateX(-50%); /* Center the button */
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: #333 solid 1px,;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none; /* Ensure it is initially hidden */
+}
+
+.hide-posts-button:hover {
+    background-color: #DBD7D3;
+}
+
+.back-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none; 
+}
+
+.back-to-top-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Responsive styles for tablet (iPad) */
+@media (max-width: 1024px) {
+  .carousel-item {
+    min-width: 33.33%; /* Show 3 items at a time */
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        display: none; /* Hide menu by default on mobile */
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Show menu when active on mobile */
+    }
+
+    .navbar-toggle {
+        display: flex; /* Show mobile menu button */
+    }
+
+    /* carousel */
+
+    .carousel-item {
+      min-width: 50%; /* Show 2 items at a time */
+    }
+
+    .carousel-item img {
+      width: 150px; /* Adjust width for smaller screens */
+      height: 150px; /* Adjust height for smaller screens */
+    }
+}
+
+/* Responsive styles for small mobile devices */
+@media (max-width: 480px) {
+  .carousel-item {
+    min-width: 100%; /* Show 1 item at a time */
+  }
+
+  .carousel-item img {
+    width: 120px; /* Adjust width for smaller screens */
+    height: 120px; /* Adjust height for smaller screens */
+  }
+
+  .carousel-item h3 {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
