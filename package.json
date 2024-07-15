@@ -1,0 +1,22 @@
+{
+  "name": "project-exam-1-inamarieforseth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Inamarie84/project-exam-1-inamarieforseth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Inamarie84/project-exam-1-inamarieforseth/issues"
+  },
+  "homepage": "https://github.com/Inamarie84/project-exam-1-inamarieforseth#readme",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
