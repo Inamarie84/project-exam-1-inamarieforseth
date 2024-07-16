@@ -2,7 +2,8 @@
 
 /* ----- global ----- */
 
-/* HTML: <div class="loader"></div> */
+
+/* 
 .loader {
   width: fit-content;
   font-weight: bold;
@@ -15,7 +16,7 @@
 .loader:before {
   content:"Loading..."
 }
-@keyframes l2 {to{background-size: 100% 3px}}
+@keyframes l2 {to{background-size: 100% 3px}} */
 
 
 .loading-indicator {
@@ -40,6 +41,7 @@ body {
     font-family: "karla", sans-serif;
     font-weight: 200;
     font-size: 15px;
+    height: 100%;
 }
 
 .h2 {
@@ -408,16 +410,52 @@ header {
 }
 
 /* ----- footer -----*/
+
 .wrapper {
+  box-sizing: border-box;
   min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* .page-footer {
-  background-color: #333;
-} */
+.page-footer {
+  background-color: #988E82;
+  color: white;
+  font-size: larger;
+  padding: 20px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100%;
+  text-align: center;
+}
 
+.footer-content {
+  display: flex;
+  justify-content: center; /* Center the columns horizontally */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between columns */
+}
+
+.column {
+  padding: 10px;
+  flex-basis: 30%; /* Ensure each column takes up equal space */
+}
+
+.column-two i {
+  margin: 5px;
+}
+
+.logo-footer {
+  border-radius: 100%;
+  max-width: 100px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
 
 /* ----- buttons -----*/
 
@@ -512,6 +550,20 @@ header {
     .carousel-item img {
       width: 150px; /* Adjust width for smaller screens */
       height: 150px; /* Adjust height for smaller screens */
+    }
+
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .column {
+      width: 100%;
+      padding: 10px 0;
+    }
+  
+    .column-three {
+      margin-top: 20px;
     }
 }
 

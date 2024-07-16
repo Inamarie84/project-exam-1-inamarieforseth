@@ -1,48 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Run The World</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/eb56cff7a8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="css/style.css" rel="stylesheet" />
     <script src="/js/app.js" type="module" defer></script>
     <script src="/js/ui/navbar/navbar.js" type="module" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="top-container">
-            <div class="top-image"></div>
-            <h1 class="top-heading">Run the world</h1>
-        </div>
+      <div class="top-container">
+        <div class="top-image"></div>
+        <h1 class="top-heading">Run the world</h1>
+      </div>
     </header>
-<main>
-    <div id="message" class="message"></div>
-   
-    <section id="latest-posts">
+    <main>
+      <div id="message" class="message"></div>
+
+      <section id="latest-posts">
         <div class="carousel-wrapper">
-            <div class="carousel-header">
-                <h2>Latest Posts</h2>
+          <div class="carousel-header">
+            <h2>Latest Posts</h2>
+          </div>
+          <!-- <div id="loader" class="loader"></div> -->
+          <div id="loading-indicator" class="loading-indicator">Loading...</div>
+          <div class="carousel-container">
+            <button class="carousel-arrow left-arrow">&lt;</button>
+            <div class="carousel">
+              <div class="carousel-track"></div>
             </div>
-            <!-- <div id="loader" class="loader"></div> -->
-            <div id="loading-indicator" class="loading-indicator">Loading...</div>
-            <div class="carousel-container">
-                <button class="carousel-arrow left-arrow">&lt;</button>
-                <div class="carousel">
-                    <div class="carousel-track"></div>
-                </div>
-                <button class="carousel-arrow right-arrow">&gt;</button>
-            </div>
+            <button class="carousel-arrow right-arrow">&gt;</button>
+          </div>
         </div>
-    </section>  
-</main>
-  <footer class="wrapper">
-        <div class="page-footer">Sticky footer</div>
-       </footer>
-</body>
+      </section>
+    </main>
+    <footer class="wrapper page-footer">
+        <div class="footer-content">
+          <div class="column column-one"> 
+            <p>Contact me:</p>
+            <p>hello@runtheworld.com</p>
+          </div>
+          <div class="column column-two">
+            <p>Follow me on Social Media:</p>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-facebook-messenger"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-snapchat"></i>
+          </div>
+          <div class="column column-three">
+              <img src="/images/Run the world.jpg" alt="Logo of RunTheWorld.com" class="logo-footer"/>
+          </div>
+        </div>
+        <p class="footer-bottom">2024 RunTheWorld, Inc &copy;</p>
+      </footer>
+      
+  </body>
 </html>
