@@ -7,17 +7,21 @@ import {
   renderImages,
 } from "../../ui/posts/renderPostTitles.js";
 
-export async function initializeAboutPage() {
-  try {
-    const [titles, images] = await Promise.all([
-      fetchPostTitles(),
-      fetchImages(),
-    ]);
-    renderPostTitles(titles);
-    renderImages(images);
-  } catch (error) {
-    console.error("Error initializing about page:", error);
+export function initializeAboutPage() {
+  async function init() {
+    try {
+      const [titles, images] = await Promise.all([
+        fetchPostTitles(),
+        fetchImages(),
+      ]);
+      renderPostTitles(titles);
+      renderImages(images);
+    } catch (error) {
+      console.error("Error initializing about page:", error);
+    }
   }
+
+  document.addEventListener("DOMContentLoaded", init);
 }
 
-document.addEventListener("DOMContentLoaded", initializeAboutPage);
+// initializeAboutPage();

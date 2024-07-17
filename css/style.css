@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* variables*/
+:root {
+  /* --color-main: #fff;
+  --color-theme: #0a3641;
+  --color-font: #393d40;
+  --color-shade: rgba(242, 242, 240, 80%);
+  --color-background: rgba(242, 242, 240, 70%);
+  --color-active: #e0ddd9;
+  --color-product: #f2f2f0;
+  --color-footer: #000000;
+  --color-shopping: #393d40; */
+}
+
+
 /* ----- global ----- */
 
 
@@ -34,7 +48,6 @@
   display: none; 
 }
 
-
 body {
     margin: 0;
     padding: 0;
@@ -57,7 +70,7 @@ body {
 }
 
 .top-image {
-    background-image: url('../images/backgroundimage_11zon.jpg'); /* Path to the image */
+    background-image: url('../images/backgroundimage_11zon.jpg'); 
     background-size: cover; /* Cover the entire element */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -349,6 +362,7 @@ header {
 /* ----- about -----*/
 
 /* Main container styling */
+
 .main-container {
   display: flex;
   justify-content: space-between;
@@ -379,6 +393,7 @@ header {
 }
 
 /* Individual sections styling */
+
 .container-one, .container-two, .container-three {
   flex: 1;
   padding: 20px;
@@ -425,6 +440,7 @@ header {
   background-color: #ad9d8d;
   color: white;
   font-size: 18px;
+  font-weight: 400;
   padding: 10px 0; /* Reduce padding to minimize footer height */
   text-align: center;
 }
@@ -455,7 +471,7 @@ header {
 }
 
 .column-three p {
-  margin: 0 10px 0 0; /* Add right margin for spacing between text and logo */
+  margin: 0 15px 0 0; /* Add right margin for spacing between text and logo */
 }
 
 .logo-footer {
