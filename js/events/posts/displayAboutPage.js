@@ -7,6 +7,8 @@ import {
   renderImages,
 } from "../../ui/posts/renderPostTitles.js";
 
+import { displayMessage } from "../../ui/common/displayMessage.js";
+
 export function initializeAboutPage() {
   async function init() {
     try {
@@ -18,6 +20,7 @@ export function initializeAboutPage() {
       renderImages(images);
     } catch (error) {
       console.error("Error initializing about page:", error);
+      displayMessage("#message", "error", "Failed to load page content");
     }
   }
 
