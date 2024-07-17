@@ -1,4 +1,5 @@
 import { fetchLatestPosts } from "../../api/posts/fetchLatestPosts.js";
+import { displayMessage } from "../../ui/common/displayMessage.js";
 import { renderLatestPosts } from "../../ui/posts/renderLatestPosts.js";
 
 let currentPage = 1;
@@ -39,6 +40,11 @@ export async function displayLatestPosts(page = 1) {
     currentPage = page;
   } catch (error) {
     console.error("Failed to fetch posts:", error);
+    displayMessage(
+      "#message",
+      "error",
+      "There was an error fetching the blogposts"
+    );
   }
 }
 
