@@ -91,7 +91,7 @@ header {
     align-items: center;
     background-color: #333; /* Navbar background color */
     padding: 10px 20px;
-    width: 100%;
+    max-width: 100%;
 }
 
 .navbar-menu {
@@ -412,27 +412,26 @@ header {
 /* ----- footer -----*/
 
 .wrapper {
-  box-sizing: border-box;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.content {
+  flex: 1; /* Take up remaining space */
 }
 
 .page-footer {
-  background-color: #988E82;
+  background-color: #ad9d8d;
   color: white;
-  font-size: larger;
-  padding: 20px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  width: 100%;
+  font-size: 18px;
+  padding: 10px 0; /* Reduce padding to minimize footer height */
   text-align: center;
 }
 
 .footer-content {
   display: flex;
-  justify-content: center; /* Center the columns horizontally */
+  justify-content: space-around; /* Distribute space evenly between columns */
   align-items: center;
   flex-wrap: wrap;
   gap: 20px; /* Adds space between columns */
@@ -440,21 +439,28 @@ header {
 
 .column {
   padding: 10px;
-  flex-basis: 30%; /* Ensure each column takes up equal space */
+  flex: 1; /* Ensure each column takes up equal space */
+  max-width: 33%; /* Ensure columns do not exceed 33% width */
+  text-align: center;
 }
 
 .column-two i {
-  margin: 5px;
+  margin: 0 5px; /* Add horizontal margin between icons */
+}
+
+.column-three {
+  display: flex; /* Enable flexbox for this column */
+  align-items: center; /* Vertically center the logo with the text */
+  justify-content: center; /* Center the content horizontally */
+}
+
+.column-three p {
+  margin: 0 10px 0 0; /* Add right margin for spacing between text and logo */
 }
 
 .logo-footer {
-  border-radius: 100%;
-  max-width: 100px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
+  border-radius: 10%;
+  max-width: 60px;
 }
 
 /* ----- buttons -----*/
@@ -552,9 +558,10 @@ header {
       height: 150px; /* Adjust height for smaller screens */
     }
 
+    /* footer */
+
     .footer-content {
       flex-direction: column;
-      align-items: center;
     }
   
     .column {
@@ -563,7 +570,7 @@ header {
     }
   
     .column-three {
-      margin-top: 20px;
+      justify-content: center; /* Center the content horizontally */
     }
 }
 
