@@ -1,3 +1,7 @@
+import { initializeNavbar } from "../navbar/navbar.js";
+
+initializeNavbar();
+
 // Get form element and input fields
 const form = document.getElementById("contactForm");
 const nameInput = document.getElementById("name");

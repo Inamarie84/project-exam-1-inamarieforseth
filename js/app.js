@@ -2,10 +2,13 @@ import { displayBlogPosts } from "./events/posts/displayBlogPosts.js";
 import { displaySingleBlogPost } from "./events/posts/displaySingleBlogPost.js";
 import { initializeAboutPage } from "./events/posts/displayAboutPage.js";
 import { displayLatestPosts } from "./events/posts/displayLatestPosts.js";
+import { initializeNavbar } from "./ui/navbar/navbar.js";
 
 const { pathname } = location;
 
 console.log("Current pathname:", pathname); // Log the pathname for debugging
+
+initializeNavbar();
 
 switch (pathname) {
   case "/":
