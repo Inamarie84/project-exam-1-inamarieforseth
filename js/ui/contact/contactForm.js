@@ -1,4 +1,4 @@
-import { initializeNavbar } from "../navbar/navbar.js";
+import { initializeNavbar } from "../components/navbar/navbar.js";
 
 initializeNavbar();
 

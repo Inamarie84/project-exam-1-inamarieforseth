@@ -2,7 +2,8 @@ import { displayBlogPosts } from "./events/posts/displayBlogPosts.js";
 import { displaySingleBlogPost } from "./events/posts/displaySingleBlogPost.js";
 import { initializeAboutPage } from "./events/posts/displayAboutPage.js";
 import { displayLatestPosts } from "./events/posts/displayLatestPosts.js";
-import { initializeNavbar } from "./ui/navbar/navbar.js";
+import { initializeNavbar } from "./ui/components/navbar/navbar.js";
+import { initializeButtons } from "./ui/components/buttons/buttonHandlers.js";
 
 function router() {
   const { pathname } = location;
@@ -21,6 +22,7 @@ function router() {
       break;
     case "/blogposts.html":
       displayBlogPosts();
+      initializeButtons();
       break;
     case "/singleblogpost.html":
       displaySingleBlogPost();

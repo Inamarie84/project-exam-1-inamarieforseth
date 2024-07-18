@@ -16,6 +16,14 @@
 
 /* ----- global ----- */
 
+/* #message {
+  background-color: #EDC8C8;
+  color: #841111;
+  border: solid 2px #841111;
+  font-size: 50px;
+  margin: 30px auto;
+} */
+
 html {
   scroll-behavior: smooth;
 }
@@ -51,6 +59,15 @@ body {
     font-size: 25px;
     color: #333;
 }
+
+/* #loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensure it is above other content */
+} */
+
 
 #loading-indicator {
   display: block; 
@@ -239,6 +256,7 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    margin: 20px auto 40px;
   }
   
   .post, .singlepost-container {
@@ -273,7 +291,7 @@ header {
   }
   
   .singlepost-container {
-    margin: auto;
+    margin: 20px auto 100px;
   }
 
 /* ----- singleblogposts ----- */
@@ -507,7 +525,7 @@ header {
 
 .hide-posts-button {
     position: fixed;
-    bottom: 10px; 
+    bottom: 140px; 
     left: 50%; /* Position it in the center */
     transform: translateX(-50%); /* Center the button */
     padding: 10px 20px;
@@ -526,7 +544,7 @@ header {
 
 .back-to-top-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 140px;
     right: 20px;
     padding: 10px 20px;
     background-color: #007bff;
