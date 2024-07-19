@@ -26,5 +26,3 @@ export function initializeAboutPage() {
 
   document.addEventListener("DOMContentLoaded", init);
 }
-
-// initializeAboutPage();

@@ -1,5 +1,6 @@
 import { createHtmlForPost } from "../components/createHtml/createHtmlForBlogPosts.js";
 import { getTotalPosts } from "../../api/posts/fetchBlogPosts.js";
+import { displayMessage } from "../common/displayMessage.js";
 
 export async function renderBlogPosts(
   targetElement,
@@ -14,8 +15,13 @@ export async function renderBlogPosts(
   }
   element.innerHTML = ""; // Clear previous posts
 
-  if (!posts.length) {
+  if (posts.length === 0) {
     console.error("No posts available to render");
+    displayMessage(
+      "#message",
+      "error",
+      "There are no blogposts to display, please try again later"
+    );
     return;
   }
 
