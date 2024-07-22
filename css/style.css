@@ -2,15 +2,14 @@
 
 /* variables*/
 :root {
-  /* --color-main: #fff;
-  --color-theme: #0a3641;
-  --color-font: #393d40;
-  --color-shade: rgba(242, 242, 240, 80%);
-  --color-background: rgba(242, 242, 240, 70%);
+  --color-main: #fff;
+  --color-border: #ccc;
+  --color-font: #333;
+  --color-boxshadow: rgba(0, 0, 0, 0.1);
+  --color-footer: #ad9d8d;;
   --color-active: #e0ddd9;
-  --color-product: #f2f2f0;
-  --color-footer: #000000;
-  --color-shopping: #393d40; */
+  --color-hover: #bbb;
+  --color-error: red;
 }
 
 
@@ -42,13 +41,110 @@ body {
   font-weight: 200;
   font-size: 15px;
   min-height: 100vh;
+  color: var(--color-font);
+  background-color: #f9f5f2;
 }
 
-.loading-indicator {
+.lds-default,
+.lds-default div {
+  box-sizing: border-box;
+}
+.loading-indicator-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /* Adjust as necessary to fit your layout */
+}
+
+.lds-default {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  color: #000; /* Adjust color as needed */
+}
+.lds-default div {
+  position: absolute;
+  width: 6.4px;
+  height: 6.4px;
+  background: currentColor;
+  border-radius: 50%;
+  animation: lds-default 1.2s linear infinite;
+}
+.lds-default div:nth-child(1) {
+  animation-delay: 0s;
+  top: 36.8px;
+  left: 66.24px;
+}
+.lds-default div:nth-child(2) {
+  animation-delay: -0.1s;
+  top: 22.08px;
+  left: 62.29579px;
+}
+.lds-default div:nth-child(3) {
+  animation-delay: -0.2s;
+  top: 11.30421px;
+  left: 51.52px;
+}
+.lds-default div:nth-child(4) {
+  animation-delay: -0.3s;
+  top: 7.36px;
+  left: 36.8px;
+}
+.lds-default div:nth-child(5) {
+  animation-delay: -0.4s;
+  top: 11.30421px;
+  left: 22.08px;
+}
+.lds-default div:nth-child(6) {
+  animation-delay: -0.5s;
+  top: 22.08px;
+  left: 11.30421px;
+}
+.lds-default div:nth-child(7) {
+  animation-delay: -0.6s;
+  top: 36.8px;
+  left: 7.36px;
+}
+.lds-default div:nth-child(8) {
+  animation-delay: -0.7s;
+  top: 51.52px;
+  left: 11.30421px;
+}
+.lds-default div:nth-child(9) {
+  animation-delay: -0.8s;
+  top: 62.29579px;
+  left: 22.08px;
+}
+.lds-default div:nth-child(10) {
+  animation-delay: -0.9s;
+  top: 66.24px;
+  left: 36.8px;
+}
+.lds-default div:nth-child(11) {
+  animation-delay: -1s;
+  top: 62.29579px;
+  left: 51.52px;
+}
+.lds-default div:nth-child(12) {
+  animation-delay: -1.1s;
+  top: 51.52px;
+  left: 62.29579px;
+}
+@keyframes lds-default {
+  0%, 20%, 80%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+/* .loading-indicator {
     text-align: center;
     margin: 20px 0;
     font-size: 25px;
-    color: #333;
+    color: var(--color-font);
 }
 
 #loading-indicator {
@@ -57,12 +153,17 @@ body {
 
 .loaded #loading-indicator {
   display: none; 
+} */
+
+
+h2 {
+    font-size: 25px;
+    text-align: center;
 }
 
-
-.h2 {
-    font-size: 40px;
-    text-align: center;
+h1 {
+  font-size: 40px;
+  text-align: center;
 }
 
 /* ----- header ----- */
@@ -73,7 +174,8 @@ body {
 }
 
 .top-image {
-    background-image: url('../images/backgroundimage_11zon.jpg'); 
+    /* background-image: url('../images/backgroundimage_11zon.jpg');  */
+    background-color: var(--color-main);
     background-size: cover; /* Cover the entire element */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -86,7 +188,7 @@ body {
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center the element */
-    color: white;
+    color: var(--color-main);
     font-size: 2em;
     text-align: center;
     font-family: 'montserrat', sans-serif;
@@ -105,7 +207,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333; /* Navbar background color */
+    background-color: var(--color-footer); /* Navbar background color */
     padding: 10px 20px;
     max-width: 100%;
 }
@@ -123,7 +225,8 @@ header {
 }
 
 .navbar-menu a {
-    color: white;
+    color: var(--color-main);
+    font-size: 16px;
     text-decoration: none;
     padding: 5px 10px;
 }
@@ -137,13 +240,20 @@ header {
 .navbar-toggle .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: var(--color-main);
     margin: 4px 0;
 }
 
 .search-bar {
     max-width: 200px;
 }
+
+.navbar-menu a.active {
+  text-decoration: underline;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
 
 /* ----- home page - carousel section ----- */
 
@@ -152,7 +262,7 @@ header {
   text-align: center;
   justify-items: center;
   font-size: 40px; /* Adjust font size */
-  color: #333; /* Adjust text color */
+  color: var(--color-font); /* Adjust text color */
 }
 
 .carousel-wrapper {
@@ -188,7 +298,7 @@ header {
   min-width: 25%; /* Show 4 items at a time */
   box-sizing: border-box;
   text-align: center;
-  padding: 10px; /* Adjust padding as needed */
+  padding: 20px; /* Adjust padding as needed */
 }
 
 .carousel-item img {
@@ -200,16 +310,16 @@ header {
 }
 
 .carousel-item h3 {
-  margin-top: 10px; /* Space between image and title */
-  font-size: 16px; /* Adjust as needed */
+  margin: 15px auto 25px; /* Space between image and title */
+  font-size: 14px; /* Adjust as needed */
   line-height: 1.4;
 }
 
 .carousel-arrow {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--color-font);
+  color: var(--color-main);
   border: none;
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
   position: absolute;
   top: 50%; /* Center vertically */
@@ -229,9 +339,7 @@ header {
   right: 0;
 }
 
-
-  
-  /* ----- blogposts ----- */
+/* ----- blogposts ----- */
 
 .posts-container {
     display: flex;
@@ -245,10 +353,11 @@ header {
     width: 100%;
     max-width: 800px; /* Control the max width of each post */
     margin-bottom: 25px; /* Space between posts */
-    border: 1px solid #ccc;
+    background-color: var(--color-main);
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--color-boxshadow);
   }
 
    .post h4 {
@@ -297,7 +406,7 @@ header {
   height: 100%;
   overflow: auto;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.6);
 }
 
 /* Modal Content (image) */
@@ -313,7 +422,7 @@ header {
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #fff;
+  color: var(--color-main);
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
@@ -321,7 +430,7 @@ header {
 
 .close:hover,
 .close:focus {
-  color: #bbb;
+  color: var(--color-hover);
   text-decoration: none;
   cursor: pointer;
 }
@@ -332,9 +441,10 @@ header {
     max-width: 600px;
     margin: 60px auto;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: var(--color-main);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 8px var(--color-boxshadow);
   }
   
   .form-group {
@@ -350,12 +460,12 @@ header {
     width: 100%;
     padding: 8px 0px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     border-radius: 4px;
   }
   
   .error {
-    color: red;
+    color: var(--color-error);
     font-size: 14px;
     margin-top: 5px;
   }
@@ -376,14 +486,14 @@ header {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color: #fff;
+  background-color: var(--color-main);
   padding: 20px;
 }
 
 .p-one, .p-two, .p-three {
-  background-color: #fff;
+  background-color: var(--color-main);
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 5px;
   margin-bottom: 20px;
   line-height: 2rem;
@@ -399,8 +509,9 @@ header {
 .container-one, .container-two, .container-three {
   flex: 1;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   border-radius: 5px;
+  background-color: var(--color-main);
 }
 
 .social-media-list li {
@@ -410,7 +521,6 @@ header {
   line-height: 2.2rem;
   word-spacing: 0.2rem;
 }
-
 
 .about-container {
   line-height: 3rem;
@@ -439,8 +549,8 @@ header {
 }
 
 .page-footer {
-  background-color: #ad9d8d;
-  color: white;
+  background-color: var(--color-footer);
+  color: var(--color-main);
   font-size: 18px;
   font-weight: 400;
   padding: 10px 0; /* Reduce padding to minimize footer height */
@@ -483,14 +593,15 @@ header {
 
 /* ----- buttons -----*/
 
-.more-posts-button, .custom-back-button, .submit-button, .read-more-button {
+.more-posts-button, .custom-back-button, .submit-button, .read-more-link {
     padding: 10px 20px;
     margin: 10px auto 20px;
-    border: #333 solid 1px,;
+    border: var(--color-font) solid 1px,;
     border-radius: 5px;
-    background-color: #fff;
-    color: #333;
+    background-color: var(--color-main);
+    color: var(--color-font);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .submit-button {
@@ -500,7 +611,7 @@ header {
 .more-posts-button:hover,
 .custom-back-button:hover,
 .submit-button:hover,
-.read-more-button:hover 
+.read-more-link:hover 
 {
     background-color: #DBD7D3;
 }
@@ -511,9 +622,9 @@ header {
     left: 50%; /* Position it in the center */
     transform: translateX(-50%); /* Center the button */
     padding: 10px 20px;
-    background-color: #fff;
-    color: #333;
-    border: #333 solid 1px,;
+    background-color: var(--color-main);
+    color: var(--color-font);
+    border: var(--color-font) solid 1px,;
     border-radius: 5px;
     cursor: pointer;
     z-index: 1000;
@@ -530,7 +641,7 @@ header {
     right: 20px;
     padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: var(--color-main);
     border: none;
     border-radius: 5px;
     cursor: pointer;

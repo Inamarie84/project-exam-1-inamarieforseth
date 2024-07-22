@@ -11,7 +11,7 @@ export function createHtmlForPost(post) {
   postContainer.classList.add("post");
 
   // Create and append the title
-  const titleElement = document.createElement("h4");
+  const titleElement = document.createElement("h2");
   titleElement.innerText = title.rendered;
   postContainer.appendChild(titleElement);
 

@@ -29,14 +29,18 @@
     </header>
     <main>
       <div id="message" class="message"></div>
-
       <section id="latest-posts">
         <div class="carousel-wrapper">
           <div class="carousel-header">
-            <h2>Latest Posts</h2>
+            <h1>Latest Posts</h1>
           </div>
-          <!-- <div id="loader" class="loader"></div> -->
-          <div id="loading-indicator" class="loading-indicator">Loading...</div>
+          <div id="loading-indicator-wrapper" class="loading-indicator-wrapper">
+            <div id="loading-indicator" class="lds-default">
+              <div></div><div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div><div></div>
+              <div></div><div></div>
+            </div>
+          </div>
           <div class="carousel-container">
             <button class="carousel-arrow left-arrow">&lt;</button>
             <div class="carousel">
@@ -49,7 +53,6 @@
     </main>
     <div class="wrapper">
         <main class="content">
-            <!-- Your main content goes here -->
         </main>
         <footer class="page-footer">
             <div class="footer-content">

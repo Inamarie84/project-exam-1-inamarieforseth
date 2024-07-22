@@ -1,5 +1,5 @@
 export function createTitleElement(title) {
-  const titleElement = document.createElement("h1");
+  const titleElement = document.createElement("h2");
   titleElement.innerText = title;
   return titleElement;
 }

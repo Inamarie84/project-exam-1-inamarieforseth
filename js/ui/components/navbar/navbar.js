@@ -1,4 +1,3 @@
-// navbar.js
 export function initializeNavbar() {
   document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
@@ -29,9 +28,9 @@ export function initializeNavbar() {
     // append menu items to the menu
     menuItems.forEach((item, index) => {
       const menuItem = document.createElement("li");
-      const menuLink = document.createElement("a"); // corrected here
+      const menuLink = document.createElement("a");
       menuLink.href = menuLinks[index];
-      menuLink.textContent = item; // move textContent to menuLink
+      menuLink.textContent = item;
       menuItem.appendChild(menuLink);
       menu.appendChild(menuItem);
     });
@@ -57,6 +56,16 @@ export function initializeNavbar() {
     // Add event listener for mobile menu button
     mobileMenuButton.addEventListener("click", () => {
       menu.classList.toggle("active");
+    });
+
+    // Add active class to current page link
+    const currentLocation = location.pathname;
+    const menuLinksElements = menu.querySelectorAll("a");
+
+    menuLinksElements.forEach((link) => {
+      if (link.pathname === currentLocation) {
+        link.classList.add("active");
+      }
     });
   });
 }
