@@ -6,6 +6,10 @@ export function initializeNavbar() {
     const nav = document.createElement("nav");
     nav.classList.add("navbar");
 
+    // wrapper to align menu and search bar
+    const navWrapper = document.createElement("div");
+    navWrapper.classList.add("navbar-wrapper");
+
     // the menu
     const menu = document.createElement("ul");
     menu.classList.add("navbar-menu");
@@ -45,10 +49,13 @@ export function initializeNavbar() {
       mobileMenuButton.appendChild(bar);
     }
 
-    // append the search bar, menu, and mobile button to the nav
-    nav.appendChild(menu);
+    // append the menu and mobile button to the navWrapper
+    navWrapper.appendChild(menu);
+    navWrapper.appendChild(mobileMenuButton);
+
+    // append the navWrapper and search bar to the nav
+    nav.appendChild(navWrapper);
     nav.appendChild(searchBar);
-    nav.appendChild(mobileMenuButton);
 
     // append the nav to the header
     header.appendChild(nav);

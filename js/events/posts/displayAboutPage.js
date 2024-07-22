@@ -1,11 +1,9 @@
 import {
   fetchPostTitles,
   fetchImages,
-} from "../../api/about/fetchPostTitles.js";
-import {
-  renderPostTitles,
-  renderImages,
-} from "../../ui/posts/renderPostTitles.js";
+} from "../../api/posts/fetchPostTitlesAbout.js";
+import { renderPostTitles } from "../../ui/posts/renderPostTitles.js";
+import { renderImages } from "../../ui/utilities/renderImages.js";
 
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
