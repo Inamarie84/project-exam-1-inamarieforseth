@@ -41,7 +41,8 @@ import { initializeAboutPage } from "./events/posts/displayAboutPage.js";
 import { displayLatestPosts } from "./events/posts/displayLatestPosts.js";
 import { initializeNavbar } from "./ui/components/navbar/navbar.js";
 import { initializeButtons } from "./ui/components/buttons/buttonHandlers.js";
-import { hideLoadingIndicator } from "./ui/utilities/hideLoadingIndicator.js";
+import { hideLoadingIndicator } from "./ui/components/indicators/hideLoadingIndicator.js";
+import { initializeContactForm } from "./ui/contact/contactForm.js";
 
 function router() {
   const { pathname } = location;
@@ -65,6 +66,9 @@ function router() {
         break;
       case "/singleblogpost.html":
         displaySingleBlogPost();
+        break;
+      case "/contact.html": // Assuming the contact page is contact.html
+        initializeContactForm();
         break;
       default:
         console.log("No matching route found"); // Handle cases where the path does not match any expected route
