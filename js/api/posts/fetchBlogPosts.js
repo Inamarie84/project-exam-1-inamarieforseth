@@ -19,8 +19,6 @@ export async function fetchPosts(page, perPage) {
 
 // Function to fetch blog posts with loading indicator management
 export async function fetchBlogPosts(page, perPage) {
-  const loadingIndicator = document.getElementById("loading-indicator");
-  loadingIndicator.style.display = "block"; // Show the loading indicator
   try {
     const { data } = await fetchPosts(page, perPage);
     console.log("Fetched posts:", data);
@@ -28,8 +26,6 @@ export async function fetchBlogPosts(page, perPage) {
   } catch (error) {
     console.error("Error fetching posts:", error);
     throw error; // Rethrow the error to be caught in the calling function
-  } finally {
-    loadingIndicator.style.display = "none"; // Hide the loading indicator
   }
 }
 

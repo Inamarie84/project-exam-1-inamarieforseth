@@ -3,13 +3,16 @@
 /* variables*/
 :root {
   --color-main: #fff;
-  --color-border: #ccc;
-  --color-font: #333;
+  --color-border: #7f857a;
+  --color-font: #4a504d;
+  --color-footer: #4a504d;
   --color-boxshadow: rgba(0, 0, 0, 0.1);
-  --color-footer: #ad9d8d;;
-  --color-active: #e0ddd9;
-  --color-hover: #bbb;
+  --color-theme: #ad9d8d;
+  --color-background: #f4f1ed;
+  --color-hover: #f4f1ed;
   --color-error: red;
+  --color-headings: #6b4f3f;
+  --color-sub-button: #d9c4b1;
 }
 
 
@@ -42,7 +45,26 @@ body {
   font-size: 15px;
   min-height: 100vh;
   color: var(--color-font);
-  background-color: #f9f5f2;
+  background-color: var(--color-background);
+}
+
+h1, h2, h3, .navbar {
+  font-family: "Montserrat", serif; 
+  color: var(--color-headings);
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+h3 {
+  text-align: center;
 }
 
 .lds-default,
@@ -140,20 +162,6 @@ body {
   }
 }
 
-h1 {
-  font-size: 40px;
-  text-align: center;
-}
-
-h2 {
-    font-size: 25px;
-    text-align: center;
-}
-
-h3 {
-  text-align: center;
-}
-
 /* ----- header ----- */
 
 .top-container {
@@ -162,31 +170,11 @@ h3 {
 }
 
 .top-image {
-    /* background-image: url('../images/backgroundimage_11zon.jpg');  */
-    background-color: var(--color-main);
-    background-size: cover; /* Cover the entire element */
+    background-image: url('../images/runtheworld_logo.jpg'); 
+    background-color: var(--color-main); 
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
-    height: 200px; /* Set a height for the top image */
-    width: 100%;
-}
-
-.top-heading {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the element */
-    color: var(--color-main);
-    font-size: 2em;
-    text-align: center;
-    font-family: 'montserrat', sans-serif;
-    font-weight: 600;
-}
-
-header {
-    width: 100%;
-    font-family: 'montserrat', sans-serif;
-    font-weight: 400;
+    height: 400px; /* Set a height for the top image */
 }
 
 /* ----- nav ----- */
@@ -196,8 +184,8 @@ header {
   display: flex;
   justify-content: space-between; /* Space between items */
   align-items: center;
-  background-color: var(--color-footer); /* Navbar background color */
-  padding: 10px 20px;
+  background-color: var(--color-theme); /* Navbar background color */
+  padding: 25px 20px;
   max-width: 100%;
 }
 
@@ -216,7 +204,7 @@ header {
   gap: 80px;
   margin: 0;
   padding: 0;
-  flex: 1; /* Allow the menu to take up space */
+  flex: 1; 
 }
 
 .navbar-menu li {
@@ -225,7 +213,8 @@ header {
 
 .navbar-menu a {
   color: var(--color-main);
-  font-size: 16px;
+  font-size: 25px;
+  font-weight: 300;
   text-decoration: none;
   padding: 5px 20px;
 }
@@ -249,12 +238,6 @@ header {
   padding: 5px 10px;
 }
 
-/* Search bar styling */
-.search-bar {
-  max-width: 200px;
-}
-
-
 /* ----- home page - carousel section ----- */
 
 .carousel-header {
@@ -262,7 +245,7 @@ header {
   text-align: center;
   justify-items: center;
   font-size: 40px; /* Adjust font size */
-  color: var(--color-font); /* Adjust text color */
+  color: var(--color-headings); /* Adjust text color */
 }
 
 .carousel-wrapper {
@@ -310,13 +293,13 @@ header {
 }
 
 .carousel-item h3 {
-  margin: 15px auto 25px; /* Space between image and title */
+  margin: 30px auto 20px; /* Space between image and title */
   font-size: 14px; /* Adjust as needed */
   line-height: 1.4;
 }
 
 .carousel-arrow {
-  background-color: var(--color-font);
+  background-color: var(--color-footer);
   color: var(--color-main);
   border: none;
   padding: 20px;
@@ -536,7 +519,7 @@ header {
   border: 1px solid var(--color-border);
   border-radius: 5px;
   background-color: var(--color-main);
-  box-shadow: 0 4px 8px var(--color-boxshadow)
+  
 }
 
 .social-media-list li {
@@ -575,7 +558,7 @@ header {
 
 .page-footer {
   background-color: var(--color-footer);
-  color: var(--color-main);
+  color: var(--color-background);
   font-size: 18px;
   font-weight: 400;
   padding: 10px 0; /* Reduce padding to minimize footer height */
@@ -619,26 +602,26 @@ header {
 /* ----- buttons -----*/
 
 .more-posts-button, .custom-back-button, .submit-button, .read-more-link, .read-more-button {
-    padding: 10px 20px;
-    margin: 10px auto 20px;
-    border: var(--color-font) solid 1px,;
-    border-radius: 5px;
-    background-color: var(--color-main);
-    color: var(--color-font);
-    cursor: pointer;
-    text-decoration: none;
+  padding: 10px 20px;
+  margin: 10px auto 20px;
+  border: var(--color-font) solid 1px;
+  border-radius: 5px;
+  background-color: var(--color-main);
+  color: var(--color-font);
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+  display: block; /* Ensure the element takes full width and can be centered */
+  text-align: center; /* Center the text inside the button */
+  width: 120px;
+}
+
+.posts-container, .backbutton-container {
+  text-align: initial;
 }
 
 .submit-button {
     display: block;
-}
-
-.more-posts-button:hover,
-.custom-back-button:hover,
-.submit-button:hover,
-.read-more-link:hover 
-{
-    background-color: #DBD7D3;
 }
 
 .hide-posts-button {
@@ -656,28 +639,30 @@ header {
     display: none; /* Ensure it is initially hidden */
 }
 
-.hide-posts-button:hover {
-    background-color: #DBD7D3;
-}
-
 .back-to-top-button {
     position: fixed;
     bottom: 140px;
     right: 20px;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: var(--color-main);
-    border: none;
+    background-color: var(--color-font);
+    color: var(--color-background);
+    border: var(--color-font) solid 1px,;
     border-radius: 5px;
     cursor: pointer;
     z-index: 1000;
     display: none; 
 }
 
-.back-to-top-button:hover {
-    background-color: #0056b3;
+.more-posts-button:hover,
+.custom-back-button:hover,
+.submit-button:hover,
+.read-more-link:hover,
+.read-more-button:hover,
+.hide-posts-button:hover, 
+.back-to-top-button:hover  
+{
+    background-color: var(--color-hover);
 }
-
 
 /* Responsive styles for tablet (iPad) */
 @media (max-width: 1024px) {
@@ -722,10 +707,6 @@ header {
   .navbar-wrapper {
     flex-direction: column; /* Stack items vertically on mobile */
     align-items: flex-start; /* Align items to the start */
-  }
-
-  .search-bar {
-    margin-bottom: 10px; /* Add space below search bar */
   }
 
   .navbar-menu {

@@ -6,7 +6,7 @@ export function initializeNavbar() {
     const nav = document.createElement("nav");
     nav.classList.add("navbar");
 
-    // wrapper to align menu and search bar
+    // wrapper to align menu and mobile menu button
     const navWrapper = document.createElement("div");
     navWrapper.classList.add("navbar-wrapper");
 
@@ -22,12 +22,6 @@ export function initializeNavbar() {
       "/about.html",
       "/contact.html",
     ];
-
-    // Search bar
-    const searchBar = document.createElement("input");
-    searchBar.type = "text";
-    searchBar.placeholder = "Search";
-    searchBar.classList.add("search-bar");
 
     // append menu items to the menu
     menuItems.forEach((item, index) => {
@@ -53,9 +47,8 @@ export function initializeNavbar() {
     navWrapper.appendChild(menu);
     navWrapper.appendChild(mobileMenuButton);
 
-    // append the navWrapper and search bar to the nav
+    // append the navWrapper to the nav
     nav.appendChild(navWrapper);
-    nav.appendChild(searchBar);
 
     // append the nav to the header
     header.appendChild(nav);

@@ -64,8 +64,6 @@
 
 // renderPostTitles.js
 
-import { hideLoadingIndicator } from "../utilities/hideLoadingIndicator.js";
-
 export function renderPostTitles(titles) {
   const container = document.querySelector(".about-container");
 
@@ -92,7 +90,4 @@ export function renderPostTitles(titles) {
   readMoreButton.textContent = "Read More";
   readMoreButton.classList.add("read-more-button"); // Optional
   container.appendChild(readMoreButton);
-
-  // Hide the loading indicator
-  hideLoadingIndicator();
 }

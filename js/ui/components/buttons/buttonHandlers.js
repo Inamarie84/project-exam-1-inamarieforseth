@@ -4,6 +4,7 @@ import {
 } from "../../../api/posts/fetchBlogPosts.js";
 import { renderBlogPosts } from "../../../ui/posts/renderBlogPosts.js";
 import { createHtmlForPost } from "../../components/createHtml/createHtmlForBlogPosts.js";
+import { displayMessage } from "../../common/displayMessage.js";
 
 let currentPage = 1;
 let perPage = 10;

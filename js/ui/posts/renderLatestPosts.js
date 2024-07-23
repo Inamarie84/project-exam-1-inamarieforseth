@@ -1,7 +1,6 @@
 // renderLatestPosts.js
 
 import { updateArrows } from "../utilities/carouselUtils.js";
-import { hideLoadingIndicator } from "../utilities/hideLoadingIndicator.js";
 
 export function renderLatestPosts(posts) {
   const carouselTrack = document.querySelector(".carousel-track");
@@ -39,7 +38,6 @@ export function renderLatestPosts(posts) {
   });
 
   updateArrows();
-  hideLoadingIndicator();
 }
 
 // export function renderLatestPosts(posts) {

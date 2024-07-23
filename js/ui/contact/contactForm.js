@@ -7,7 +7,7 @@ const form = document.getElementById("contactForm");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const subjectInput = document.getElementById("subject");
-const messageInput = document.getElementById("message");
+const messageInput = document.getElementById("messageInput");
 
 // Function to validate form on submit
 form.addEventListener("submit", function (event) {

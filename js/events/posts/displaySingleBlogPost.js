@@ -16,9 +16,6 @@ export async function displaySingleBlogPost() {
       return;
     }
 
-    const loadingIndicator = document.getElementById("loading-indicator");
-    if (loadingIndicator) loadingIndicator.style.display = "block";
-
     try {
       const post = await fetchSinglePost(postId);
       console.log("Fetched single post:", post);
@@ -34,8 +31,6 @@ export async function displaySingleBlogPost() {
         "error",
         "There was an error fetching the blogpost"
       );
-    } finally {
-      if (loadingIndicator) loadingIndicator.style.display = "none";
     }
   }
 
