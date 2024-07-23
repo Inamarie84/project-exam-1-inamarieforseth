@@ -4,7 +4,7 @@ export function initializeContactForm() {
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const subjectInput = document.getElementById("subject");
-  const messageInput = document.getElementById("messageInput");
+  const messageInput = document.getElementById("message");
 
   // Function to validate form on submit
   form.addEventListener("submit", function (event) {
