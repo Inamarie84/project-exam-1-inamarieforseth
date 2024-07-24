@@ -41,9 +41,9 @@ export async function displayLatestPosts(page = 1) {
   } catch (error) {
     console.error("Failed to fetch posts:", error);
     displayMessage(
-      "#message",
+      "#notification-message",
       "error",
-      "There was an error fetching the blogposts"
+      "There was an error fetching the latest blogposts"
     );
   }
 }

@@ -18,20 +18,32 @@
 
 /* ----- global ----- */
 
-/* #message {
-  display: none; 
-  background-color: #EDC8C8;
-  color: #841111;
-  border: solid 2px #841111;
-  font-size: 50px;
-  font-weight: 500;
-  margin: 50px auto;
-  padding: 20px;
+/* notification message to user */
+.notification-message {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 25px;
+  text-align: center;
 }
 
-#message.visible {
-  display: block; 
-} */
+.notification-message.success {
+  background-color: #4caf50; /* Green */
+}
+
+.notification-message.error {
+  background-color: #f44336; /* Red */
+}
+
+.notification-message.info {
+  background-color: #2196f3; /* Blue */
+}
+
+.notification-message.warning {
+  background-color: #ff9800; /* Orange */
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -165,16 +177,17 @@ h3 {
 /* ----- header ----- */
 
 .top-container {
+    background-color: var(--color-main); 
     position: relative;
-    width: 100%;
+    padding: 10px;
 }
 
 .top-image {
-    background-image: url('../images/runtheworld_logo.jpg'); 
-    background-color: var(--color-main); 
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    height: 400px; /* Set a height for the top image */
+  background-image: url('../images/runtheworld_logo.jpg'); 
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: contain;
+  height: 150px; /* Set a height for the top image */
 }
 
 /* ----- nav ----- */
@@ -447,7 +460,7 @@ h3 {
     border-radius: 4px;
   }
   
-  .error {
+  .errors {
     color: var(--color-error);
     font-size: 14px;
     margin-top: 5px;

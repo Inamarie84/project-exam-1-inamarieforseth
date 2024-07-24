@@ -27,7 +27,7 @@ export async function displaySingleBlogPost() {
     } catch (error) {
       console.error("Failed to load single post:", error);
       displayMessage(
-        "#message",
+        "#notification-message",
         "error",
         "There was an error fetching the blogpost"
       );

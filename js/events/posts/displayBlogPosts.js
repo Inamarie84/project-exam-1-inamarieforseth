@@ -14,8 +14,8 @@ export async function displayBlogPosts() {
   } catch (error) {
     console.error("Error fetching or rendering posts:", error);
     displayMessage(
-      "#message",
-      "error",
+      "#notification-message",
+      "error-message",
       "There was an error fetching the blogposts"
     );
   }
