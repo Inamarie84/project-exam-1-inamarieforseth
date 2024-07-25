@@ -1,3 +1,5 @@
+import { displayMessage } from "../common/displayMessage.js";
+
 export function initializeContactForm() {
   // Get form element and input fields
   const form = document.getElementById("contactForm");
@@ -5,6 +7,7 @@ export function initializeContactForm() {
   const emailInput = document.getElementById("email");
   const subjectInput = document.getElementById("subject");
   const messageInput = document.getElementById("message");
+  const notificationElement = "#notification-message"; // Selector for the notification message
 
   // Function to validate form on submit
   form.addEventListener("submit", function (event) {
@@ -32,8 +35,19 @@ export function initializeContactForm() {
 
     // If form is valid, submit the form (you can add AJAX submission here)
     if (isFormValid) {
-      alert("Form submitted successfully!");
-      form.submit(); // Replace with your form submission logic
+      displayMessage(
+        notificationElement,
+        "success",
+        "Form submitted successfully!"
+      );
+      form.reset(); // Optionally, reset the form fields
+      // form.submit(); // Replace with your form submission logic
+    } else {
+      displayMessage(
+        notificationElement,
+        "error",
+        "Please correct the errors in the form."
+      );
     }
   });
 

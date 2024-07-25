@@ -44,6 +44,7 @@
   background-color: #ff9800; /* Orange */
 }
 
+/*----- general -----*/
 
 html {
   scroll-behavior: smooth;
@@ -79,6 +80,8 @@ h3 {
   text-align: center;
 }
 
+/*----- loading -----*/
+
 .lds-default,
 .lds-default div {
   box-sizing: border-box;
@@ -87,7 +90,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-   /* Adjust as necessary to fit your layout */
 }
 
 .lds-default {
@@ -95,7 +97,7 @@ h3 {
   position: relative;
   width: 80px;
   height: 80px;
-  color: #000; /* Adjust color as needed */
+  color: var(--color-theme); 
 }
 .lds-default div {
   position: absolute;
@@ -441,6 +443,17 @@ h3 {
     border-radius: 8px;
     border: 1px solid var(--color-border);
     box-shadow: 0 4px 8px var(--color-boxshadow);
+  }
+
+  .contact-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+  }
+
+  .contact-info {
+    text-align: center;
   }
   
   .form-group {
