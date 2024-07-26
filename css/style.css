@@ -198,25 +198,21 @@ h3 {
 }
 
 /* ----- nav ----- */
-
-/* Navbar container styling */
 .navbar {
   display: flex;
-  justify-content: space-between; /* Space between items */
+  justify-content: space-between;
   align-items: center;
-  background-color: var(--color-theme); /* Navbar background color */
+  background-color: var(--color-theme);
   padding: 25px 20px;
   max-width: 100%;
 }
 
-/* Wrapper for menu and mobile button */
 .navbar-wrapper {
   display: flex;
   align-items: center;
-  flex: 1; /* Allow this to take available space */
+  width: 100%;
 }
 
-/* Align menu to the left */
 .navbar-menu {
   list-style: none;
   display: flex;
@@ -240,23 +236,21 @@ h3 {
 }
 
 .navbar-toggle {
-  display: none; /* Hide mobile menu button by default */
-  flex-direction: column;
+  display: none;
   cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 40px; /* Increase the font size */
+  color: var(--color-main); /* Use the correct color */
 }
 
 .navbar-toggle .bar {
-  width: 25px;
-  height: 3px;
+  width: 35px;
+  height: 5px;
   background-color: var(--color-main);
-  margin: 4px 0;
+  margin: 6px 0;
 }
 
-.navbar-menu a.active {
-  text-decoration: underline;
-  border-radius: 5px;
-  padding: 5px 10px;
-}
 
 /* ----- home page - carousel section ----- */
 
@@ -400,14 +394,14 @@ h3 {
   margin: 20px 0;
 }
 
+.post div, .singlepost-container div  {
+  margin: 10px 30px;
+}
+
 .singlepost-container img {
   width: 100%;
   height: auto;
   margin: 20px 0; /* Space around the image */
-}
-
-.post-text {
-  grid-column: 1;
 }
 
 .singlepost-container {
@@ -469,6 +463,7 @@ h3 {
 .container {
   max-width: 600px;
   margin: 60px auto;
+  align-items: center;
   padding: 20px;
   background-color: var(--color-main);
   border-radius: 8px;
@@ -770,24 +765,32 @@ textarea {
 
 /* Mobile responsive styles */
 @media (max-width: 768px) {
+
+  .navbar {
+    padding: 12px;
+  }
   .navbar-wrapper {
-    flex-direction: column; /* Stack items vertically on mobile */
-    align-items: flex-start; /* Align items to the start */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .navbar-menu {
-    display: none; /* Hide menu by default on mobile */
+    display: none;
     flex-direction: column;
-    gap: 10px; /* Adjust spacing for mobile */
-    width: 100%; /* Full width on mobile */
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    position: static; /* Make it static to be below the button */
   }
 
   .navbar-menu.active {
-    display: flex; /* Show menu when active */
+    display: flex;
   }
 
   .navbar-toggle {
-    display: flex; /* Show mobile menu button */
+    display: flex;
+    align-self: flex-end; /* Ensure it stays on the right */
   }
 
   /*home*/
@@ -802,7 +805,7 @@ textarea {
   .post,
   .singlepost-container {
     padding: 20px;
-    margin: 0px 20px 20px;
+    margin: 0px 0px 20px;
   }
 
   .post h4 {
@@ -842,6 +845,13 @@ textarea {
 
   .social-media-list li {
     font-size: 16px;
+  }
+
+  /* contact */
+
+  .container {
+    padding: 20px;
+    margin: 20px;
   }
 
   /* carousel */

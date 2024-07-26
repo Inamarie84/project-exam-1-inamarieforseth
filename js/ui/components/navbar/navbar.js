@@ -13,6 +13,7 @@ export function initializeNavbar() {
     // the menu
     const menu = document.createElement("ul");
     menu.classList.add("navbar-menu");
+    menu.id = "navbar-menu";
 
     // menu items
     const menuItems = ["Home", "Runcations", "About", "Contact"];
@@ -34,18 +35,14 @@ export function initializeNavbar() {
     });
 
     // mobile menu button
-    const mobileMenuButton = document.createElement("div");
+    const mobileMenuButton = document.createElement("button");
     mobileMenuButton.classList.add("navbar-toggle");
     mobileMenuButton.id = "mobile-menu";
-    for (let i = 0; i < 3; i++) {
-      const bar = document.createElement("span");
-      bar.classList.add("bar");
-      mobileMenuButton.appendChild(bar);
-    }
+    mobileMenuButton.innerHTML = "&#9776;"; // Hamburger icon
 
     // append the menu and mobile button to the navWrapper
-    navWrapper.appendChild(menu);
     navWrapper.appendChild(mobileMenuButton);
+    navWrapper.appendChild(menu);
 
     // append the navWrapper to the nav
     nav.appendChild(navWrapper);

@@ -13,7 +13,7 @@ export async function renderBlogPosts(
     console.error(`Element with selector ${targetElement} not found`);
     return;
   }
-  element.innerHTML = ""; // Clear previous posts
+  element.innerHTML = "";
 
   if (posts.length === 0) {
     console.error("No posts available to render");
