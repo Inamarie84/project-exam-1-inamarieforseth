@@ -682,6 +682,8 @@ textarea {
   display: block; /* Ensure the element takes full width and can be centered */
   text-align: center; /* Center the text inside the button */
   width: 120px;
+  box-shadow: 0 4px 8px var(--color-boxshadow);
+  
 }
 
 .posts-container,
@@ -706,6 +708,7 @@ textarea {
   cursor: pointer;
   z-index: 1000;
   display: none; /* Ensure it is initially hidden */
+  box-shadow: 0 4px 8px var(--color-boxshadow);
 }
 
 .back-to-top-button {
@@ -720,6 +723,7 @@ textarea {
   cursor: pointer;
   z-index: 1000;
   display: none;
+  box-shadow: 0 4px 8px var(--color-boxshadow);
 }
 
 .more-posts-button:hover,
@@ -729,7 +733,7 @@ textarea {
 .read-more-button:hover,
 .hide-posts-button:hover,
 .back-to-top-button:hover {
-  background-color: var(--color-hover);
+  background-color: var(--color-sub-button);
 }
 
 /* Responsive styles for tablet (iPad) */
