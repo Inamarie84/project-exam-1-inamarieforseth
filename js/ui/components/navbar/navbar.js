@@ -15,7 +15,7 @@ export function initializeNavbar() {
     menu.classList.add("navbar-menu");
 
     // menu items
-    const menuItems = ["Home", "Runcation", "About", "Contact"];
+    const menuItems = ["Home", "Runcations", "About", "Contact"];
     const menuLinks = [
       "/index.html",
       "/blogposts.html",
