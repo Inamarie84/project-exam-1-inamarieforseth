@@ -11,6 +11,7 @@
   --color-background: #f4f1ed;
   --color-hover: #f4f1ed;
   --color-error: red;
+  --color-success: #4caf50;
   --color-headings: #6b4f3f;
   --color-sub-button: #d9c4b1;
 }
@@ -28,19 +29,11 @@
 }
 
 .notification-message.success {
-  background-color: #4caf50; /* Green */
+  background-color: var(--color-success); /* Green */
 }
 
 .notification-message.error {
-  background-color: #f44336; /* Red */
-}
-
-.notification-message.info {
-  background-color: #2196f3; /* Blue */
-}
-
-.notification-message.warning {
-  background-color: #ff9800; /* Orange */
+  background-color: var(--color-error); /* Red */
 }
 
 /*----- general -----*/
@@ -243,8 +236,8 @@ h3 {
   cursor: pointer;
   background: none;
   border: none;
-  font-size: 40px; /* Increase the font size */
-  color: var(--color-main); /* Use the correct color */
+  font-size: 40px; 
+  color: var(--color-main); 
 }
 
 .navbar-toggle .bar {
@@ -264,11 +257,11 @@ h3 {
 /* ----- home page - carousel section ----- */
 
 .carousel-header {
-  margin: 30px auto; /* Add space between the heading and the carousel */
+  margin: 20px auto; 
   text-align: center;
   justify-items: center;
-  font-size: 40px; /* Adjust font size */
-  color: var(--color-headings); /* Adjust text color */
+  font-size: 40px; 
+  color: var(--color-headings); 
 }
 
 .carousel-wrapper {
@@ -281,7 +274,7 @@ h3 {
 .carousel-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the carousel */
+  justify-content: center; 
   overflow: hidden;
   width: 100%;
   position: relative;
@@ -290,34 +283,34 @@ h3 {
 .carousel {
   overflow: hidden;
   width: 80%;
-  margin: 40px auto; /* Center the carousel within the container */
+  margin: 40px auto; 
 }
 
 .carousel-track {
   display: flex;
-  gap: 10px; /* Equal space between items */
+  gap: 10px; 
   transition: transform 0.3s ease-in-out;
 }
 
 .carousel-item {
   flex: 1;
-  min-width: 25%; /* Show 4 items at a time */
+  min-width: 25%; 
   box-sizing: border-box;
   text-align: center;
-  padding: 20px; /* Adjust padding as needed */
+  padding: 20px; 
 }
 
 .carousel-item img {
-  width: 200px; /* Fixed width */
-  height: 200px; /* Fixed height */
-  object-fit: cover; /* Maintain aspect ratio */
+  width: 200px; 
+  height: 200px; 
+  object-fit: cover; 
   display: block;
-  margin: 0 auto; /* Center the image */
+  margin: 0 auto; 
 }
 
 .carousel-item h3 {
-  margin: 30px auto 20px; /* Space between image and title */
-  font-size: 14px; /* Adjust as needed */
+  margin: 30px auto 20px; 
+  font-size: 14px; 
   line-height: 1.4;
 }
 
@@ -328,7 +321,7 @@ h3 {
   padding: 20px;
   cursor: pointer;
   position: absolute;
-  top: 50%; /* Center vertically */
+  top: 50%; 
   transform: translateY(-50%);
 }
 
@@ -347,19 +340,34 @@ h3 {
 
 /*home*/
 
-.intro 
-{
-    background-color: var(--color-main);
-    padding: 20px;
-    border: 1px solid var(--color-border);
-    border-radius: 5px;
-    margin-bottom: 20px;
-    line-height: 2rem;
-  }
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  margin: 0px auto 60px;
+  background-color: var(--color-main);
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 8px var(--color-boxshadow);
+  border-radius: 5px;
+  line-height: 2rem;
+  max-width: 800px;
+  text-align: center;
+}
+
+.intro h3 {
+  margin-bottom: 20px; 
+}
+
+.image-intro {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 200px;
+}
 
 .index-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
   margin: 20px auto 40px;
@@ -429,12 +437,12 @@ h3 {
 
 /* ----- singleblogposts ----- */
 
-/* figure {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+figure {
+  display: block;
+  justify-content: center;
+  margin: 10px auto;
   max-width: 60%;
-} */
+}
 
 /* The Modal (background) */
 .modal {
@@ -819,9 +827,17 @@ textarea {
 
   /*home*/
 
+  .intro {
+    margin: 20px 40px;
+  }
+  .index-container {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center the columns */
+  }
+
   .index-column {
-    flex: 1 1 100%;
-    margin: 10px 30px;
+    flex: 1 1 100%; /* Take full width */
+    max-width: none; /* Remove max-width constraint */
   }
 
   /*blogpost - singleblogpost*/
