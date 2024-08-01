@@ -40,6 +40,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -47,10 +48,12 @@ body {
   padding: 0;
   font-family: "karla", sans-serif;
   font-weight: 200;
-  font-size: 15px;
+  font-size: 18px;
   min-height: 100vh;
   color: var(--color-font);
   background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
 }
 
 h1,
@@ -631,11 +634,12 @@ textarea {
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full height of the viewport */
+  min-height: 100vh;
 }
 
 .content {
-  flex: 1; /* Take up remaining space */
+  flex: 1;
+  padding: 20px;
 }
 
 .page-footer {
@@ -643,37 +647,37 @@ textarea {
   color: var(--color-background);
   font-size: 18px;
   font-weight: 400;
-  padding: 10px 0; /* Reduce padding to minimize footer height */
+  padding: 10px 0;
   text-align: center;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-around; /* Distribute space evenly between columns */
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px; /* Adds space between columns */
+  gap: 20px;
 }
 
 .column {
   padding: 10px;
-  flex: 1; /* Ensure each column takes up equal space */
-  max-width: 33%; /* Ensure columns do not exceed 33% width */
+  flex: 1;
+  max-width: 33%;
   text-align: center;
 }
 
 .column-two i {
-  margin: 0 5px; /* Add horizontal margin between icons */
+  margin: 0 5px;
 }
 
 .column-three {
-  display: flex; /* Enable flexbox for this column */
-  align-items: center; /* Vertically center the logo with the text */
-  justify-content: center; /* Center the content horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .column-three p {
-  margin: 0 15px 0 0; /* Add right margin for spacing between text and logo */
+  margin: 0 15px 0 0;
 }
 
 .logo-footer {
