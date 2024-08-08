@@ -299,7 +299,7 @@ h3 {
 
 .carousel-item {
   flex: 1;
-  min-width: 25%; 
+  min-width: 20%; 
   box-sizing: border-box;
   text-align: center;
   padding: 20px; 
@@ -908,8 +908,8 @@ textarea {
   }
 
   .carousel-item img {
-    width: 150px; /* Adjust width for smaller screens */
-    height: 150px; /* Adjust height for smaller screens */
+    width: 160px; /* Adjust width for smaller screens */
+    height: 160px; /* Adjust height for smaller screens */
   }
 
   /* back to top button */
@@ -939,10 +939,10 @@ textarea {
   .carousel-item {
     min-width: 100%; /* Show 1 item at a time */
   }
-
+ 
   .carousel-item img {
-    width: 120px; /* Adjust width for smaller screens */
-    height: 120px; /* Adjust height for smaller screens */
+    width: 240px; 
+    height: 240px; 
   }
 
   .carousel-item h3 {
