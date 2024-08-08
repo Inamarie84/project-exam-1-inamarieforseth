@@ -1,7 +1,4 @@
 // renderImages.js
-
-import { hideLoadingIndicator } from "./hideLoadingIndicator.js";
-
 export function renderImages(images) {
   const aboutImagesSection = document.querySelector(".about-images");
   const loadingIndicatorWrapper = document.querySelector(
@@ -23,7 +20,4 @@ export function renderImages(images) {
     imgElement.alt = image.alt;
     aboutImagesSection.appendChild(imgElement);
   });
-
-  // Hide the loading indicator
-  hideLoadingIndicator();
 }

@@ -1,8 +1,4 @@
-// backToTopButton.js
-
-function toggleButtonVisibility(button, isVisible) {
-  if (button) button.style.display = isVisible ? "block" : "none";
-}
+import { toggleButtonVisibility } from "../../utilities/buttonUtils.js"; // Import the shared function
 
 export function setupBackToTopButton() {
   const backToTopButton = document.getElementById("back-to-top-button");
