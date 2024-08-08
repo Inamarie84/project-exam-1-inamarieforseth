@@ -25,17 +25,18 @@ export async function renderBlogPosts(
     return;
   }
 
-  // Create HTML for each post and append to the container
   const postHtml = posts.map(createHtmlForPost);
   element.append(...postHtml);
 
-  // Display "More Posts" button if there are more posts to load
   const morePostsButton = document.getElementById("more-posts-button");
   if (morePostsButton) {
-    if (currentPage * perPage < getTotalPosts()) {
-      morePostsButton.style.display = "block";
-    } else {
-      morePostsButton.style.display = "none";
-    }
+    toggleButtonVisibility(
+      morePostsButton,
+      currentPage * perPage < getTotalPosts()
+    );
   }
+}
+
+function toggleButtonVisibility(button, isVisible) {
+  if (button) button.style.display = isVisible ? "block" : "none";
 }

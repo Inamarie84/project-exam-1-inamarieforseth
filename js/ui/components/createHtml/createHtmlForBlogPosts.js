@@ -1,4 +1,3 @@
-// createHtmlForPost.js
 import {
   extractFeaturedImageUrl,
   removeImagesAndFigcaptionsFromContent,

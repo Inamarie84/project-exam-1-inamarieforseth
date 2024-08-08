@@ -23,7 +23,7 @@
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  color: #fff;
+  color: var(--color-main);
   font-size: 25px;
   text-align: center;
 }
@@ -67,6 +67,7 @@ h3,
 h1 {
   font-size: 40px;
   text-align: center;
+  margin-top: 0;
 }
 
 h2 {
@@ -545,7 +546,8 @@ textarea {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding: 20px;
+  margin-bottom: 60px;
+  /* padding: 20px; */
 }
 
 .container-two {
@@ -848,8 +850,7 @@ textarea {
 
   /*blogpost - singleblogpost*/
 
-  .post,
-  .singlepost-container {
+  .post {
     padding: 20px;
     margin: 0px 0px 20px;
   }
@@ -897,7 +898,7 @@ textarea {
 
   .container, .singlepost-container {
     padding: 20px;
-    margin: 20px;
+    margin: 20px 20px 60px 20px;
   }
 
   /* carousel */
@@ -909,6 +910,12 @@ textarea {
   .carousel-item img {
     width: 150px; /* Adjust width for smaller screens */
     height: 150px; /* Adjust height for smaller screens */
+  }
+
+  /* back to top button */
+
+  .back-to-top-button {
+    bottom: 340px;
   }
 
   /* footer */

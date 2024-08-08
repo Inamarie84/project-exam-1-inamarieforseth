@@ -11,6 +11,7 @@ import {
   extractFeaturedImageUrl,
   extractTermImages,
 } from "../utilities/imageExtraction.js";
+import { setupBackToTopButton } from "../components/buttons/backToTopButton.js";
 
 export function renderSingleBlogPost(targetElement, post) {
   const element = document.querySelector(targetElement);
@@ -65,4 +66,7 @@ export function renderSingleBlogPost(targetElement, post) {
 
   // Add click event listeners to images inside the post content
   handleImageClicks(contentElement, _embedded);
+
+  // Initialize the back-to-top button
+  setupBackToTopButton();
 }
