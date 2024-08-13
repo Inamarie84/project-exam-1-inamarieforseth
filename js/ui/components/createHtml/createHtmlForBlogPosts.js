@@ -4,7 +4,7 @@ import {
 } from "../../utilities/imageUtils.js";
 
 export function createHtmlForPost(post) {
-  const { title, content, id, _embedded } = post;
+  const { title, content, id, _embedded, date } = post;
 
   const postContainer = document.createElement("div");
   postContainer.classList.add("post");
@@ -20,6 +20,11 @@ export function createHtmlForPost(post) {
     imageElement.classList.add("featured-image");
     postContainer.appendChild(imageElement);
   }
+
+  const dateElement = document.createElement("p");
+  dateElement.innerText = date;
+  dateElement.classList.add("blogpost-date");
+  postContainer.appendChild(dateElement);
 
   const contentElement = document.createElement("div");
   contentElement.innerHTML = removeImagesAndFigcaptionsFromContent(
