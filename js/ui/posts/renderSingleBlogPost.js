@@ -28,7 +28,7 @@ export function renderSingleBlogPost(targetElement, post) {
     return;
   }
 
-  const { title, content, _embedded } = post;
+  const { title, content, _embedded, date } = post;
 
   const titleElement = createTitleElement(title.rendered);
   element.appendChild(titleElement);
@@ -44,6 +44,11 @@ export function renderSingleBlogPost(targetElement, post) {
       openModal(featuredImageUrl, "");
     });
   }
+
+  const dateElement = document.createElement("p");
+  dateElement.innerText = date;
+  dateElement.classList.add("blogpost-date");
+  element.appendChild(dateElement);
 
   const contentElement = createContentElement(content.rendered);
   element.appendChild(contentElement);
