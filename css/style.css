@@ -354,7 +354,7 @@ h3 {
   margin: 0px auto 60px;
   background-color: var(--color-main);
   padding: 20px;
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   box-shadow: 0 4px 8px var(--color-boxshadow);
   border-radius: 5px;
   line-height: 2rem;
@@ -364,13 +364,6 @@ h3 {
 
 .intro h3 {
   margin-bottom: 20px; 
-}
-
-.image-intro {
-  display: block;
-  margin: 0 auto 20px;
-  max-width: 200px;
-  box-shadow: 0 4px 8px var(--color-boxshadow);
 }
 
 .index-container {
@@ -384,7 +377,7 @@ h3 {
   box-sizing: border-box;
   padding: 20px 10px;
   margin: 10px;
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   border-radius: 8px;
   background-color: var(--color-main);
   box-shadow: 0 4px 8px var(--color-boxshadow);
@@ -411,7 +404,7 @@ h3 {
   max-width: 800px;
   margin-bottom: 25px;
   background-color: var(--color-main);
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px var(--color-boxshadow);
@@ -451,7 +444,7 @@ figure {
   justify-content: center;
   margin: 10px auto;
   max-width: 60%;
-  /* box-shadow: 0 4px 8px var(--color-boxshadow); */
+  cursor: pointer;
 }
 
 figcaption {
@@ -509,7 +502,7 @@ figcaption {
   padding: 20px;
   background-color: var(--color-main);
   border-radius: 8px;
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   box-shadow: 0 4px 8px var(--color-boxshadow);
 }
 
@@ -559,6 +552,15 @@ textarea {
   gap: 20px;
   margin-bottom: 60px;
   /* padding: 20px; */
+}
+
+.image-about, .image-intro {
+    display: block;
+    margin: 20px auto;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 4px 8px var(--color-boxshadow);
 }
 
 .container-two {
@@ -616,7 +618,7 @@ textarea {
 .container-two,
 .container-three {
   padding: 20px;
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   border-radius: 5px;
   background-color: var(--color-main);
   box-shadow: 0 4px 8px var(--color-boxshadow);
@@ -769,9 +771,12 @@ textarea {
 .submit-button:hover,
 .read-more-link:hover,
 .read-more-button:hover,
-.hide-posts-button:hover,
-.back-to-top-button:hover {
+.hide-posts-button:hover {
   background-color: var(--color-sub-button);
+}
+
+.back-to-top-button:hover {
+  background-color: var(--color-border);
 }
 
 /* Responsive styles for tablet (iPad) */

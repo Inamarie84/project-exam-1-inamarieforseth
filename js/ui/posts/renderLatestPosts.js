@@ -1,11 +1,9 @@
 import { updateArrows } from "../utilities/carouselUtils.js";
-import { setupBackToTopButton } from "../components/buttons/backToTopButton.js";
 
 export function renderLatestPosts(posts) {
   const carouselTrack = document.querySelector(".carousel-track");
-  if (!carouselTrack) return; // Exit if carousel track is not found
+  if (!carouselTrack) return;
 
-  // Clear previous content
   carouselTrack.innerHTML = "";
 
   posts.forEach((post) => {
@@ -23,20 +21,15 @@ export function renderLatestPosts(posts) {
       <h3>${post.title.rendered}</h3>
     `;
 
-    // Create the Read More link
     const readMoreLink = document.createElement("a");
-    readMoreLink.href = `singleblogpost.html?id=${post.id}`; // Adjust URL as per your route
+    readMoreLink.href = `singleblogpost.html?id=${post.id}`;
     readMoreLink.textContent = "Read More";
-    readMoreLink.classList.add("read-more-link"); // Add class for styling if needed
+    readMoreLink.classList.add("read-more-link");
 
-    // Append the Read More link to the post element
     postElement.appendChild(readMoreLink);
 
-    // Append the post element to the carousel track
     carouselTrack.appendChild(postElement);
   });
 
   updateArrows();
-
-  setupBackToTopButton(); // Initialize the back-to-top button if needed here
 }

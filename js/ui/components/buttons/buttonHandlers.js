@@ -5,18 +5,16 @@ import {
 import { renderBlogPosts } from "../../../ui/posts/renderBlogPosts.js";
 import { createHtmlForPost } from "../../components/createHtml/createHtmlForBlogPosts.js";
 import { displayMessage } from "../../common/displayMessage.js";
-import { setupBackToTopButton } from "../buttons/backToTopButton.js";
-import { toggleButtonVisibility } from "../../utilities/buttonUtils.js"; // Import the shared function
+import { toggleButtonVisibility } from "../../utilities/buttonUtils.js";
 
 let currentPage = 1;
 const perPage = 10;
-let additionalPosts = []; // To keep track of additional posts
+let additionalPosts = [];
 
 function updateButtonVisibility() {
   const hidePostsButton = document.getElementById("hide-posts-button");
 
   if (hidePostsButton) {
-    // Hide the hidePostsButton when scrolled to the top
     toggleButtonVisibility(
       hidePostsButton,
       window.scrollY > 0 && additionalPosts.length > 0
@@ -27,7 +25,6 @@ function updateButtonVisibility() {
 function setupButtons() {
   const morePostsButton = document.getElementById("more-posts-button");
   const hidePostsButton = document.getElementById("hide-posts-button");
-  const backToTopButton = document.getElementById("back-to-top-button");
 
   if (morePostsButton) {
     morePostsButton.addEventListener("click", async () => {
@@ -58,7 +55,6 @@ function setupButtons() {
 
         if (currentPage * perPage >= getTotalPosts()) {
           toggleButtonVisibility(morePostsButton, false);
-          toggleButtonVisibility(backToTopButton, true);
         }
       } catch (error) {
         console.error("Error fetching more posts:", error);
@@ -80,14 +76,10 @@ function setupButtons() {
 
       currentPage -= 1;
 
-      // Ensure visibility of hidePostsButton is updated
       updateButtonVisibility();
     });
   }
 
-  setupBackToTopButton(); // Initialize the back-to-top button
-
-  // Update button visibility on scroll
   window.addEventListener("scroll", updateButtonVisibility);
 }
 

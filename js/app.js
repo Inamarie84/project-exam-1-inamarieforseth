@@ -43,11 +43,13 @@ import { initializeContactForm } from "./ui/contact/contactForm.js";
 import { initializeNavbar } from "./ui/components/navbar/navbar.js";
 import { initializeButtons } from "./ui/components/buttons/buttonHandlers.js";
 import { hideLoadingIndicator } from "./ui/utilities/hideLoadingIndicator.js";
+import { setupBackToTopButton } from "./ui/components/buttons/backToTopButton.js";
 
 function router() {
   const { pathname } = location;
 
   initializeNavbar();
+  setupBackToTopButton(); // Initialize Back to Top button on every page
 
   console.log("Current pathname:", pathname); // Log the pathname for debugging
 

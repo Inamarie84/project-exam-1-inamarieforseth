@@ -1,4 +1,3 @@
-// renderImages.js
 export function renderImages(images) {
   const aboutImagesSection = document.querySelector(".about-images");
   const loadingIndicatorWrapper = document.querySelector(
@@ -10,10 +9,8 @@ export function renderImages(images) {
     return;
   }
 
-  // Clear any existing content
   aboutImagesSection.innerHTML = "";
 
-  // Create and append the images
   images.forEach((image) => {
     const imgElement = document.createElement("img");
     imgElement.src = image.src;

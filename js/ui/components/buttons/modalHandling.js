@@ -49,7 +49,7 @@ export function handleImageClicks(contentElement, embedded) {
     contentElement.appendChild(termImageElement);
 
     termImageElement.addEventListener("click", () => {
-      openModal(imgUrl, ""); // No caption for term images
+      openModal(imgUrl, "");
     });
   });
 }

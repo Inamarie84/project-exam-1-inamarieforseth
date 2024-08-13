@@ -4,24 +4,22 @@ import { renderLatestPosts } from "../../ui/posts/renderLatestPosts.js";
 
 let currentPage = 1;
 let totalPosts = 0;
-let postsPerPage = 4; // Default value
+let postsPerPage = 4;
 
-// Function to dynamically update postsPerPage based on screen size
 function updatePostsPerPage() {
   if (window.innerWidth < 480) {
-    postsPerPage = 1; // 1 post per page for very small screens
+    postsPerPage = 1;
   } else if (window.innerWidth < 768) {
-    postsPerPage = 2; // 2 posts per page for small screens
+    postsPerPage = 2;
   } else if (window.innerWidth < 1024) {
-    postsPerPage = 3; // 3 posts per page for medium-sized screens
+    postsPerPage = 3;
   } else {
-    postsPerPage = 4; // 4 posts per page for larger screens
+    postsPerPage = 4;
   }
 }
 
-// Function to display latest posts
 export async function displayLatestPosts(page = 1) {
-  updatePostsPerPage(); // Update postsPerPage on initial load
+  updatePostsPerPage();
   try {
     const { data, totalPosts: fetchedTotalPosts } = await fetchLatestPosts(
       page,
@@ -48,7 +46,6 @@ export async function displayLatestPosts(page = 1) {
   }
 }
 
-// Event listener for navigation arrows
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("left-arrow")) {
     if (currentPage > 1) {
@@ -63,12 +60,10 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Initial load of latest posts on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
   displayLatestPosts();
 });
 
-// Update postsPerPage on window resize
 window.addEventListener("resize", () => {
   updatePostsPerPage();
 });

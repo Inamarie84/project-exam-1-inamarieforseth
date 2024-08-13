@@ -1,9 +1,7 @@
-// updateArrows.js
-
 export function updateArrows() {
   const leftArrow = document.querySelector(".left-arrow");
   const rightArrow = document.querySelector(".right-arrow");
-  if (!leftArrow || !rightArrow) return; // Exit if arrows are not found
+  if (!leftArrow || !rightArrow) return;
 
   const currentPage = parseInt(
     document.querySelector(".carousel-track").dataset.currentPage,

@@ -2,7 +2,6 @@ import { renderSingleBlogPost } from "../../ui/posts/renderSingleBlogPost.js";
 import { fetchSinglePost } from "../../api/posts/fetchSingleBlogPost.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
-//displaySingleBlogPost.js
 export async function displaySingleBlogPost() {
   async function init() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -20,7 +19,6 @@ export async function displaySingleBlogPost() {
       const post = await fetchSinglePost(postId);
       console.log("Fetched single post:", post);
 
-      // Update the page title
       document.title = `Run The World | ${post.title.rendered}`;
 
       renderSingleBlogPost("#singlepost-container", post);

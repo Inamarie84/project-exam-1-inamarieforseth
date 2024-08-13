@@ -11,7 +11,6 @@ import {
   extractFeaturedImageUrl,
   extractTermImages,
 } from "../utilities/imageExtraction.js";
-import { setupBackToTopButton } from "../components/buttons/backToTopButton.js";
 
 export function renderSingleBlogPost(targetElement, post) {
   const element = document.querySelector(targetElement);
@@ -20,26 +19,20 @@ export function renderSingleBlogPost(targetElement, post) {
     return;
   }
 
-  // Clear previous content
   element.innerHTML = "";
 
-  // Log post object for debugging
   console.log("Post object:", post);
 
-  // Check if post has the required properties
   if (!post || !post.title || !post.content) {
     console.error("Post data is missing required properties");
     return;
   }
 
-  // Destructure the post object
   const { title, content, _embedded } = post;
 
-  // Create and append the title element
   const titleElement = createTitleElement(title.rendered);
   element.appendChild(titleElement);
 
-  // Extract and append the featured image if available
   const featuredImageUrl = extractFeaturedImageUrl(_embedded);
   if (featuredImageUrl) {
     const imageElement = document.createElement("img");
@@ -47,26 +40,18 @@ export function renderSingleBlogPost(targetElement, post) {
     imageElement.classList.add("featured-image");
     element.appendChild(imageElement);
 
-    // Add event listener to open modal on image click
     imageElement.addEventListener("click", () => {
-      openModal(featuredImageUrl, ""); // No caption for featured image
+      openModal(featuredImageUrl, "");
     });
   }
 
-  // Create and append the content element
   const contentElement = createContentElement(content.rendered);
   element.appendChild(contentElement);
 
-  // Create and append the back button
   const backButtonContainer = createBackButton();
   element.appendChild(backButtonContainer);
 
-  // Setup modal functionality
   setupModal();
 
-  // Add click event listeners to images inside the post content
   handleImageClicks(contentElement, _embedded);
-
-  // Initialize the back-to-top button
-  setupBackToTopButton();
 }

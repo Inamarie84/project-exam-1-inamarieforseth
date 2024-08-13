@@ -5,7 +5,6 @@ import {
 import { renderPostTitles } from "../../ui/posts/renderPostTitles.js";
 import { renderImages } from "../../ui/utilities/renderImages.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
-import { setupBackToTopButton } from "../../ui/components/buttons/backToTopButton.js";
 
 export function initializeAboutPage() {
   async function init() {
@@ -16,9 +15,6 @@ export function initializeAboutPage() {
       ]);
       renderPostTitles(titles);
       renderImages(images);
-
-      // Initialize the back-to-top button
-      setupBackToTopButton();
     } catch (error) {
       console.error("Error initializing about page:", error);
       displayMessage(

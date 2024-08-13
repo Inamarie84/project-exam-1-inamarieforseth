@@ -1,4 +1,4 @@
-import { toggleButtonVisibility } from "../../utilities/buttonUtils.js"; // Import the shared function
+import { toggleButtonVisibility } from "../../utilities/buttonUtils.js";
 
 export function setupBackToTopButton() {
   const backToTopButton = document.getElementById("back-to-top-button");

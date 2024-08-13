@@ -10,8 +10,6 @@ export async function fetchPostTitles() {
 }
 
 export async function fetchImages() {
-  // If you have a specific API endpoint for images, use it here
-  // For now, let's return a hardcoded list of images
   return [
     {
       src: "images/femalerunnerhill_11zon.jpg",

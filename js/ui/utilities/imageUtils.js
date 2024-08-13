@@ -1,4 +1,3 @@
-// utilities.js
 export function extractFeaturedImageUrl(embedded) {
   if (
     embedded &&

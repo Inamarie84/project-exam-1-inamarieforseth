@@ -1,20 +1,16 @@
 import { displayMessage } from "../common/displayMessage.js";
 
 export function initializeContactForm() {
-  // Get form element and input fields
   const form = document.getElementById("contactForm");
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const subjectInput = document.getElementById("subject");
   const messageInput = document.getElementById("message");
-  const notificationElement = "#notification-message"; // Selector for the notification message
+  const notificationElement = "#notification-message";
 
-  // Function to validate form on submit
   form.addEventListener("submit", function (event) {
-    // Prevent default form submission
     event.preventDefault();
 
-    // Validate each input field
     let isFormValid = true;
 
     if (!isNameValid()) {
@@ -33,15 +29,13 @@ export function initializeContactForm() {
       isFormValid = false;
     }
 
-    // If form is valid, submit the form (you can add AJAX submission here)
     if (isFormValid) {
       displayMessage(
         notificationElement,
         "success",
         "Form submitted successfully!"
       );
-      form.reset(); // Optionally, reset the form fields
-      // form.submit(); // Replace with your form submission logic
+      form.reset();
     } else {
       displayMessage(
         notificationElement,
@@ -51,7 +45,6 @@ export function initializeContactForm() {
     }
   });
 
-  // Function to validate Name field
   function isNameValid() {
     const name = nameInput.value.trim();
     const nameError = document.getElementById("nameError");
@@ -65,12 +58,10 @@ export function initializeContactForm() {
     }
   }
 
-  // Function to validate Email field
   function isEmailValid() {
     const email = emailInput.value.trim();
     const emailError = document.getElementById("emailError");
 
-    // Regular expression for basic email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(email)) {
@@ -82,7 +73,6 @@ export function initializeContactForm() {
     }
   }
 
-  // Function to validate Subject field
   function isSubjectValid() {
     const subject = subjectInput.value.trim();
     const subjectError = document.getElementById("subjectError");
@@ -96,7 +86,6 @@ export function initializeContactForm() {
     }
   }
 
-  // Function to validate Message field
   function isMessageValid() {
     const message = messageInput.value.trim();
     const messageError = document.getElementById("messageError");
@@ -110,7 +99,6 @@ export function initializeContactForm() {
     }
   }
 
-  // Event listeners for real-time validation (optional)
   nameInput.addEventListener("input", isNameValid);
   emailInput.addEventListener("input", isEmailValid);
   subjectInput.addEventListener("input", isSubjectValid);

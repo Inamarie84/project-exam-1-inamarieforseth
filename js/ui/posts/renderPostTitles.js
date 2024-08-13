@@ -6,10 +6,8 @@ export function renderPostTitles(titles) {
     return;
   }
 
-  // Clear any existing content
   container.innerHTML = "";
 
-  // Create and append the list of titles
   const list = document.createElement("ul");
   titles.forEach((title) => {
     const listItem = document.createElement("li");
@@ -18,10 +16,9 @@ export function renderPostTitles(titles) {
   });
   container.appendChild(list);
 
-  // Create and add the "Read More" button
   const readMoreButton = document.createElement("a");
   readMoreButton.href = "blogposts.html";
   readMoreButton.textContent = "Read More";
-  readMoreButton.classList.add("read-more-button"); // Optional
+  readMoreButton.classList.add("read-more-button");
   container.appendChild(readMoreButton);
 }
