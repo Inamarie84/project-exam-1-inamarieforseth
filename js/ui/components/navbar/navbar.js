@@ -41,20 +41,19 @@ export function initializeNavbar() {
     themeToggleButton.id = "theme-toggle";
     themeToggleButton.classList.add("switch-button");
 
-    // Check localStorage for theme preference and set button text
     if (localStorage.getItem("theme") === "nighttime") {
       document.body.classList.add("nighttime");
-      themeToggleButton.textContent = "Switch to Daytime";
+      themeToggleButton.textContent = "Day theme";
     } else {
       document.body.classList.remove("nighttime");
-      themeToggleButton.textContent = "Switch to Nighttime";
+      themeToggleButton.textContent = "Night theme";
     }
 
-    themeWrapper.appendChild(themeToggleButton); // Wrap the button
+    themeWrapper.appendChild(themeToggleButton);
 
     navWrapper.appendChild(mobileMenuButton);
     navWrapper.appendChild(menu);
-    navWrapper.appendChild(themeWrapper); // Add the wrapper to the navbar
+    navWrapper.appendChild(themeWrapper);
 
     nav.appendChild(navWrapper);
     header.appendChild(nav);
@@ -67,11 +66,11 @@ export function initializeNavbar() {
       const body = document.body;
       if (body.classList.contains("nighttime")) {
         body.classList.remove("nighttime");
-        themeToggleButton.textContent = "Switch to Nighttime";
+        themeToggleButton.textContent = "Night theme";
         localStorage.setItem("theme", "daytime");
       } else {
         body.classList.add("nighttime");
-        themeToggleButton.textContent = "Switch to Daytime";
+        themeToggleButton.textContent = "Day theme";
         localStorage.setItem("theme", "nighttime");
       }
     });
