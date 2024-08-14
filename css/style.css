@@ -3,18 +3,36 @@
 /* variables*/
 :root {
   --color-main: #fff;
+  --color-main-night: #333;
   --color-border: #7f857a;
   --color-font: #4a504d;
   --color-footer: #4a504d;
   --color-boxshadow: rgba(0, 0, 0, 0.1);
   --color-theme: #ad9d8d;
   --color-background: #f4f1ed;
+  --color-background-night: #222;
   --color-hover: #f4f1ed;
-  --color-error: red;
-  --color-success: #4caf50;
+  --color-hover-night: #555;
+  --color-error: #ff6f6f;
+  --color-success:  #66bb6a;
   --color-headings: #6b4f3f;
   --color-sub-button: #d9c4b1;
 }
+
+:root {
+  /* Main colors */
+   /* Darker background for main content */
+  --color-border-night: #666; /* Lighter gray for borders */
+  --color-font-night: #e0e0e0; /* Light gray for font color */
+  --color-footer-night: #444; /* Darker gray for footer */
+  --color-boxshadow-night: rgba(0, 0, 0, 0.5); /* Stronger shadow for better depth */
+  --color-theme-night: #8b6d5c; /* Muted brown for theme elements */
+   /* Very dark background color */
+   /* Medium gray for hover effects */
+  --color-headings-night: #e0bfae; /* Light brown for headings */
+  --color-sub-button-night: #6c4f3b; /* Darker beige for buttons */
+}
+
 
 /* ----- global ----- */
 
@@ -78,6 +96,50 @@ h2 {
 h3 {
   text-align: center;
 }
+
+/* theme-switcher */
+
+body.nighttime {
+  background-color: var(--color-background-night);
+  color: var(--color-font-night);
+}
+
+body.nighttime .top-container {
+  background-color: var(--color-font-night);
+}
+
+body.nighttime h1,
+body.nighttime h2,
+body.nighttime h3 {
+  color: var(--color-font-night);
+}
+
+body.nighttime .index-column,
+body.nighttime .intro, 
+body.nighttime footer,
+body.nighttime .navbar,
+body.nighttime .post,
+body.nighttime .singlepost-container,
+body.nighttime .container-one,
+body.nighttime .container-two,
+body.nighttime .container-three,
+body.nighttime .p-one,
+body.nighttime .p-two,
+body.nighttime .p-three,
+body.nighttime .container {
+  color: var(--color-main);
+  background-color: var(--color-footer-night);
+}
+
+body.nighttime .switch-button {
+  background-color: var(--color-font-night);
+  color: var(--color-font);
+}
+
+
+/* ------- */
+
+
 
 /*----- loading -----*/
 
@@ -204,7 +266,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-theme);
-  padding: 25px 20px;
+  padding: 15px 20px;
   max-width: 100%;
 }
 
@@ -212,6 +274,7 @@ h3 {
   display: flex;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .navbar-menu {
@@ -222,6 +285,7 @@ h3 {
   margin: 0;
   padding: 0;
   flex: 1;
+  flex-wrap: wrap;
 }
 
 .navbar-menu li {
@@ -230,10 +294,10 @@ h3 {
 
 .navbar-menu a {
   color: var(--color-main);
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   text-decoration: none;
-  padding: 5px 20px;
+  padding: 5px 10px;
 }
 
 .navbar-toggle {
@@ -256,6 +320,10 @@ h3 {
   text-decoration: underline;
   border-radius: 5px;
   padding: 5px 10px;
+}
+
+.theme-toggle-wrapper {
+  margin-left: auto; /* Pushes the theme toggle button to the right */
 }
 
 
@@ -709,6 +777,31 @@ textarea {
 
 /* ----- buttons -----*/
 
+/* Switch Button */
+.switch-button {
+  background-color: var(--color-sub-button);
+  color: var(--color-font);
+  border: none;
+  padding: 8px 16px; 
+  cursor: pointer;
+  font-size: 14px; 
+  border-radius: 5px;
+  min-width: 120px; 
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Switch Button Hover State */
+.switch-button:hover {
+  background-color: var(--color-hover);
+}
+
+/* Adjust if needed */
+.switch-button {
+  min-width: 200px; /* Ensure consistent button width */
+  text-align: center; /* Center text inside button */
+}
+
 .more-posts-button,
 .custom-back-button,
 .submit-button,
@@ -784,6 +877,10 @@ textarea {
 
 /* Responsive styles for tablet (iPad) */
 @media (max-width: 1024px) {
+  .navbar-menu {
+    gap: 20px;
+  }
+
   .carousel-item {
     min-width: 33.33%; /* Show 3 items at a time */
   }
@@ -861,6 +958,12 @@ textarea {
   .navbar-toggle {
     display: flex;
     align-self: flex-end;
+  }
+
+  .switch-button {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-width: auto;
   }
 
   /*home*/
