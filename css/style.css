@@ -119,8 +119,13 @@ body.nighttime .container {
 }
 
 body.nighttime .switch-button {
-  background-color: var(--color-font-night);
-  color: var(--color-font);
+  background-color: var(--color-background-night);
+  color: var(--color-font-night);
+}
+
+body.nighttime .switch-button:hover {
+  background-color: var(--color-footer-night);
+  color: var(--color-font-night);
 }
 
 
@@ -780,13 +785,8 @@ textarea {
 
 /* Switch Button Hover State */
 .switch-button:hover {
-  background-color: var(--color-sub-button);
-}
-
-/* Adjust if needed */
-.switch-button {
-  min-width: 200px; /* Ensure consistent button width */
-  text-align: center; /* Center text inside button */
+  background-color: var(--color-theme);
+  color: var(--color-main);
 }
 
 .more-posts-button,
