@@ -322,7 +322,13 @@ body.nighttime .hide-posts-button:hover {
 }
 
 .theme-toggle-wrapper {
-  margin-left: auto;
+  margin-left: 0; /* Reset margin */
+  margin-right: auto; /* Push it to the left side */
+  position: absolute; /* Position absolutely */
+  left: 10px; /* Align it with the hamburger icon */
+  top: 10px; /* Center vertically */
+  display: flex;
+  align-items: center;
 }
 
 /* ----- home page - carousel section ----- */
@@ -916,7 +922,7 @@ textarea {
   }
 
   .navbar {
-    padding: 12px;
+    padding: 5px 10px;
   }
 
   .navbar-wrapper {
@@ -948,6 +954,7 @@ textarea {
     padding: 8px 12px;
     min-width: auto;
   }
+
 
   /*home*/
 
