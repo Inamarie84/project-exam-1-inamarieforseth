@@ -1,55 +1,62 @@
 import { extractTermImages } from "../../utilities/imageExtraction.js";
 
-let modal, modalImg, captionText, closeModal;
-
 export function setupModal() {
-  modal = document.getElementById("imageModal");
-  modalImg = document.getElementById("modalImage");
-  captionText = document.getElementById("caption");
-  closeModal = document.querySelector(".modal .close");
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const captionText = document.getElementById("caption");
+  const closeModal = document.querySelector(".modal .close");
 
   if (closeModal) {
-    closeModal.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
+    closeModal.addEventListener("click", () => closeModalModal(modal));
   }
 
   if (modal) {
     modal.addEventListener("click", (event) => {
       if (event.target === modal) {
-        modal.style.display = "none";
+        closeModalModal(modal);
       }
     });
   }
 }
 
+function closeModalModal(modal) {
+  if (modal) {
+    modal.style.display = "none";
+    const captionText = document.getElementById("caption");
+    if (captionText) {
+      captionText.classList.remove("modal-caption");
+    }
+  }
+}
+
 function openModal(imageSrc, caption) {
-  if (modalImg && captionText) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const captionText = document.getElementById("caption");
+
+  if (modal && modalImg && captionText) {
     modal.style.display = "block";
     modalImg.src = imageSrc;
     captionText.innerHTML = caption;
+    captionText.classList.add("modal-caption");
   }
 }
 
 export function handleImageClicks(contentElement, embedded) {
   if (!contentElement) return;
 
-  const postImages = contentElement.querySelectorAll("img");
-  postImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      openModal(img.src, img.alt);
-    });
+  // Handle clicks on post images
+  contentElement.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("click", () => openModal(img.src, img.alt));
   });
 
-  const termImages = extractTermImages(embedded);
-  termImages.forEach((imgUrl) => {
+  // Handle clicks on term images
+  extractTermImages(embedded).forEach((imgUrl) => {
     const termImageElement = document.createElement("img");
     termImageElement.src = imgUrl;
     termImageElement.classList.add("term-image");
     contentElement.appendChild(termImageElement);
 
-    termImageElement.addEventListener("click", () => {
-      openModal(imgUrl, "");
-    });
+    termImageElement.addEventListener("click", () => openModal(imgUrl, ""));
   });
 }
