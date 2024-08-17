@@ -45,12 +45,10 @@ function openModal(imageSrc, caption) {
 export function handleImageClicks(contentElement, embedded) {
   if (!contentElement) return;
 
-  // Handle clicks on post images
   contentElement.querySelectorAll("img").forEach((img) => {
     img.addEventListener("click", () => openModal(img.src, img.alt));
   });
 
-  // Handle clicks on term images
   extractTermImages(embedded).forEach((imgUrl) => {
     const termImageElement = document.createElement("img");
     termImageElement.src = imgUrl;
