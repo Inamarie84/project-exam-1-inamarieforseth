@@ -37,7 +37,6 @@ export async function displayLatestPosts(page = 1) {
     renderLatestPosts(data);
     currentPage = page;
   } catch (error) {
-    console.error("Failed to fetch posts:", error);
     displayMessage(
       "#notification-message",
       "error",

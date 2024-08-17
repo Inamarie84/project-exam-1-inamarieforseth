@@ -7,23 +7,22 @@ export async function displaySingleBlogPost() {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get("id");
 
-    console.log("URL Params:", urlParams.toString());
-    console.log("Post ID:", postId);
-
     if (!postId) {
-      console.error("No post ID found in URL");
+      displayMessage(
+        "#notification-message",
+        "error",
+        "No post ID found in URL"
+      );
       return;
     }
 
     try {
       const post = await fetchSinglePost(postId);
-      console.log("Fetched single post:", post);
 
       document.title = `Run The World | ${post.title.rendered}`;
 
       renderSingleBlogPost("#singlepost-container", post);
     } catch (error) {
-      console.error("Failed to load single post:", error);
       displayMessage(
         "#notification-message",
         "error",

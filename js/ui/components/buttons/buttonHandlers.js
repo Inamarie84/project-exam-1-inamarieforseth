@@ -35,7 +35,6 @@ function setupButtons() {
         const element = document.querySelector("#posts-container");
 
         if (!morePosts.length) {
-          console.error("No more posts available");
           displayMessage(
             "#notification-message",
             "error",
@@ -57,7 +56,11 @@ function setupButtons() {
           toggleButtonVisibility(morePostsButton, false);
         }
       } catch (error) {
-        console.error("Error fetching more posts:", error);
+        displayMessage(
+          "#notification-message",
+          "error",
+          "Error fetching more posts"
+        );
       }
     });
   }
@@ -99,7 +102,6 @@ async function initialRender() {
       toggleButtonVisibility(morePostsButton, true);
     }
   } catch (error) {
-    console.error("Failed to load initial posts:", error);
     displayMessage(
       "#notification-message",
       "error",

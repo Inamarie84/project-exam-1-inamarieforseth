@@ -16,7 +16,6 @@ export function initializeAboutPage() {
       renderPostTitles(titles);
       renderImages(images);
     } catch (error) {
-      console.error("Error initializing about page:", error);
       displayMessage(
         "#notification-message",
         "error",

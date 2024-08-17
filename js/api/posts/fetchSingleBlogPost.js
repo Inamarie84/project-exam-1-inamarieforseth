@@ -8,10 +8,8 @@ export async function fetchSinglePost(postId) {
       throw new Error("Failed to fetch the single post");
     }
     const data = await response.json();
-    console.log("Fetched post data:", data);
     return data;
   } catch (error) {
-    console.error("Failed to fetch the single post:", error);
     throw error;
   }
 }

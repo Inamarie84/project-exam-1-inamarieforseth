@@ -21,10 +21,7 @@ export function renderSingleBlogPost(targetElement, post) {
 
   element.innerHTML = "";
 
-  console.log("Post object:", post);
-
   if (!post || !post.title || !post.content) {
-    console.error("Post data is missing required properties");
     return;
   }
 

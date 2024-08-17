@@ -2,7 +2,7 @@ export function renderPostTitles(titles) {
   const container = document.querySelector(".about-container");
 
   if (!container) {
-    console.error("about-container not found");
+    console.warn("The 'about-container' element was not found.");
     return;
   }
 

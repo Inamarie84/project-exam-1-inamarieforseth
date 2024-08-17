@@ -1,5 +1,4 @@
 import { BASE_URL } from "../../constants/api.js";
-import { displayMessage } from "../../ui/common/displayMessage.js";
 
 let totalPosts = 0;
 
@@ -19,15 +18,8 @@ export async function fetchPosts(page, perPage) {
 export async function fetchBlogPosts(page, perPage) {
   try {
     const { data } = await fetchPosts(page, perPage);
-    console.log("Fetched posts:", data);
     return data;
   } catch (error) {
-    console.error("Error fetching posts:", error);
-    displayMessage(
-      "#notification-message",
-      "error",
-      "There was an error fetching the blog posts."
-    );
     throw error;
   }
 }

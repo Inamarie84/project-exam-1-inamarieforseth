@@ -1,4 +1,3 @@
-// In navbar.js
 export function initializeNavbar() {
   document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
@@ -42,11 +41,9 @@ export function initializeNavbar() {
     themeToggleButton.id = "theme-toggle";
     themeToggleButton.classList.add("switch-button");
 
-    // Create icons for daytime and nighttime
     const sunIcon = '<i class="fa-regular fa-sun"></i> Day';
     const moonIcon = '<i class="fa-regular fa-moon"></i> Night';
 
-    // Check localStorage for theme preference and set button icon and text
     if (localStorage.getItem("theme") === "nighttime") {
       document.body.classList.add("nighttime");
       themeToggleButton.innerHTML = moonIcon;

@@ -10,17 +10,21 @@ export async function renderBlogPosts(
 ) {
   const element = document.querySelector(targetElement);
   if (!element) {
-    console.error(`Element with selector ${targetElement} not found`);
+    displayMessage(
+      "#notification-message",
+      "error",
+      `Target element not found: ${targetElement}`
+    );
     return;
   }
+
   element.innerHTML = "";
 
   if (posts.length === 0) {
-    console.error("No posts available to render");
     displayMessage(
-      "#message",
+      "#notification-message",
       "error",
-      "There are no blogposts to display, please try again later"
+      "There are no blog posts to display. Please try again later."
     );
     return;
   }
