@@ -25,6 +25,7 @@
 /* ----- global ----- */
 
 /* notification message to user */
+
 .notification-message {
   padding: 10px;
   margin: 10px 0;
@@ -77,11 +78,12 @@ h1 {
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 28px;
   text-align: center;
 }
 
 h3 {
+  font-size: 24px;
   text-align: center;
 }
 
@@ -280,7 +282,7 @@ body.nighttime .hide-posts-button:hover {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: 120px;
   margin: 0;
   padding: 0;
   flex: 1;
@@ -322,11 +324,11 @@ body.nighttime .hide-posts-button:hover {
 }
 
 .theme-toggle-wrapper {
-  margin-left: 0; /* Reset margin */
-  margin-right: auto; /* Push it to the left side */
-  position: absolute; /* Position absolutely */
-  left: 10px; /* Align it with the hamburger icon */
-  top: 10px; /* Center vertically */
+  margin-left: 0;
+  margin-right: auto; 
+  position: absolute; 
+  left: 10px; 
+  top: 10px; 
   display: flex;
   align-items: center;
 }
@@ -388,7 +390,7 @@ body.nighttime .hide-posts-button:hover {
 
 .carousel-item h3 {
   margin: 30px auto 20px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -441,8 +443,9 @@ body.nighttime .hide-posts-button:hover {
   display: flex;
   justify-content: center;
   padding: 20px;
-  margin: 20px auto 40px;
+  margin-bottom: 60px;
 }
+
 .index-column {
   flex: 1 1 45%;
   box-sizing: border-box;
@@ -456,6 +459,10 @@ body.nighttime .hide-posts-button:hover {
 .index-column h3 {
   text-align: center;
   margin-bottom: 30px;
+}
+
+.index-column ul {
+  padding-right: 20px;
 }
 
 /* ----- blogposts ----- */
@@ -486,7 +493,7 @@ body.nighttime .hide-posts-button:hover {
 }
 
 .post h4 {
-  font-size: 25px;
+  font-size: 24px;
   text-align: center;
 }
 
@@ -671,11 +678,6 @@ textarea {
   line-height: 2rem;
 }
 
-.p-one {
-  font-size: 20px;
-  font-weight: 300;
-}
-
 .social-media-list li {
   display: block;
   margin: 10px 0;
@@ -688,7 +690,6 @@ textarea {
 .about-container {
   line-height: 2rem;
   font-weight: 300;
-  font-size: 18px;
   padding: 5px 8px;
 }
 
@@ -726,7 +727,6 @@ textarea {
 .page-footer {
   background-color: var(--color-footer);
   color: var(--color-background);
-  font-size: 18px;
   font-weight: 400;
   padding: 10px 0;
   text-align: center;
@@ -865,7 +865,7 @@ textarea {
   /* navbar and home */
 
   .navbar-menu {
-    gap: 20px;
+    gap: 50px;
   }
 
   .carousel-item {
@@ -897,12 +897,10 @@ textarea {
   .p-one,
   .p-two,
   .p-three {
-    font-size: 18px;
     padding: 15px;
   }
 
   .about-container {
-    font-size: 18px;
     line-height: 2.5rem;
   }
 }
@@ -949,21 +947,16 @@ textarea {
     align-self: flex-end;
   }
 
-  .switch-button {
-    font-size: 12px;
-    padding: 8px 12px;
-    min-width: auto;
-  }
-
-
   /*home*/
 
   .intro {
-    margin: 20px 40px 40px;
+    margin: 10px 20px 40px;
   }
+
   .index-container {
     flex-direction: column;
     align-items: center;
+    padding: 10px;
   }
 
   .index-column {
@@ -1002,20 +995,8 @@ textarea {
     padding: 10px;
   }
 
-  .p-one,
-  .p-two,
-  .p-three {
-    font-size: 16px;
-    padding: 10px;
-  }
-
   .about-container {
-    font-size: 16px;
     line-height: 2.2rem;
-  }
-
-  .social-media-list li {
-    font-size: 16px;
   }
 
   /* contact */
@@ -1066,6 +1047,10 @@ textarea {
   }
 
   h2 {
+    font-size: 24px;
+  }
+
+  h3 {
     font-size: 20px;
   }
 
@@ -1086,9 +1071,8 @@ textarea {
 
   /*blogpost - singlepost*/
 
-  .post,
-  .singlepost-container {
-    padding: 10px;
+  .content {
+    padding: 5px;
   }
 
   .post ul,
@@ -1108,27 +1092,5 @@ textarea {
 
   .post-text {
     padding: 5px;
-  }
-
-  /*about*/
-
-  .p-one,
-  .p-two,
-  .p-three {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .about-container {
-    font-size: 14px;
-    line-height: 2rem;
-  }
-
-  .social-media-list li {
-    font-size: 14px;
-  }
-
-  .about-images img {
-    margin: 5px auto;
   }
 }

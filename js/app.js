@@ -49,7 +49,7 @@ function router() {
   const { pathname } = location;
 
   initializeNavbar();
-  setupBackToTopButton(); // Initialize Back to Top button on every page
+  setupBackToTopButton();
 
   console.log("Current pathname:", pathname); // Log the pathname for debugging
 
@@ -59,7 +59,7 @@ function router() {
       case "/index.html":
         displayLatestPosts();
         break;
-      case "/about.html": // Assuming the about page is about.html
+      case "/about.html":
         initializeAboutPage();
         break;
       case "/blogposts.html":
@@ -69,11 +69,11 @@ function router() {
       case "/singleblogpost.html":
         displaySingleBlogPost();
         break;
-      case "/contact.html": // Assuming the contact page is contact.html
+      case "/contact.html":
         initializeContactForm();
         break;
       default:
-        console.log("No matching route found"); // Handle cases where the path does not match any expected route
+        console.log("No matching route found");
     }
   } catch (error) {
     console.error("Error occurred during routing:", error);
