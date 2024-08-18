@@ -65,3 +65,22 @@ Note that this is an exam, and therefore tutor support will be limited as per th
 1.	You can try adding a sort, filter, or search to the blog posts page allowing users to find the blog post more easily that they’re looking for. 
 2.	Post the data from the contact form to WordPress so you have the details saved.
 3.	Allow users to submit comments on a blog post, and post this data to WordPress
+
+
+Exam Project Title:
+
+Run The World
+
+Project Description: 
+
+This blog is about Runcations, meaning running and vacation as a combination. It is dedicated to sharing runcations I have already been on along with tips to routes, lansmarks, local culture and tips in general. I also share information and tips about upcoming trail runcations and world marathons I hope to attend in the future.
+
+This blog is built using Wordpress (Rest API to retrieve the blogåpsts), html, css and javascript. 
+
+The blog has the following pages:
+
+* Home
+* Runcations
+* Single Runcation Specific pages
+* About 
+* Contact
