@@ -1,11 +1,15 @@
-export function extractFeaturedImageUrl(embedded) {
+// imageUtils.js
+export function extractFeaturedImageDetails(embedded) {
   if (
     embedded &&
     embedded["wp:featuredmedia"] &&
     embedded["wp:featuredmedia"][0] &&
     embedded["wp:featuredmedia"][0].source_url
   ) {
-    return embedded["wp:featuredmedia"][0].source_url;
+    return {
+      url: embedded["wp:featuredmedia"][0].source_url,
+      alt: embedded["wp:featuredmedia"][0].alt_text || "Featured image",
+    };
   }
   return null;
 }
