@@ -298,7 +298,7 @@ body.nighttime .hide-posts-button:hover {
 }
 
 .navbar-menu a {
-  color: var(--color-footer-night);
+  color: var(--color-background-night);
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
