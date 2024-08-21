@@ -121,6 +121,10 @@ body.nighttime .container {
   background-color: var(--color-footer-night);
 }
 
+body.nighttime .navbar-menu a {
+  color: var(--color-main);
+}
+
 body.nighttime .switch-button {
   background-color: var(--color-background-night);
   color: var(--color-font-night);
@@ -294,7 +298,7 @@ body.nighttime .hide-posts-button:hover {
 }
 
 .navbar-menu a {
-  color: var(--color-main);
+  color: var(--color-footer);
   font-size: 20px;
   font-weight: 500;
   text-decoration: none;
