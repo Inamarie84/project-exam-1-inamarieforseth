@@ -946,7 +946,7 @@ textarea {
   .navbar-menu {
     display: none;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
     text-align: center;
     padding: 10px 0;
