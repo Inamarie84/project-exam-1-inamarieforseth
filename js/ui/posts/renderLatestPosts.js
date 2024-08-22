@@ -22,7 +22,7 @@ export function renderLatestPosts(posts) {
     `;
 
     const readMoreLink = document.createElement("a");
-    readMoreLink.href = `singleblogpost.html?id=${post.id}`;
+    readMoreLink.href = `post.html?id=${post.id}`;
     readMoreLink.textContent = "Read More";
     readMoreLink.classList.add("read-more-link");
 

@@ -5,36 +5,41 @@ import { displayLatestPosts } from "./events/posts/displayLatestPosts.js";
 import { initializeContactForm } from "./ui/contact/contactForm.js";
 import { initializeNavbar } from "./ui/components/navbar/navbar.js";
 import { initializeButtons } from "./ui/components/buttons/buttonHandlers.js";
-import { hideLoadingIndicator } from "./ui/utilities/hideLoadingIndicator.js";
+import {
+  hideLoadingIndicator,
+  showLoadingIndicator,
+} from "./ui/utilities/loadingIndicator.js";
 import { setupBackToTopButton } from "./ui/components/buttons/backToTopButton.js";
 import { displayMessage } from "./ui/common/displayMessage.js";
 
-function router() {
+async function router() {
   const { pathname } = location;
+
+  showLoadingIndicator();
 
   initializeNavbar();
   setupBackToTopButton();
 
-  console.log("Current pathname:", pathname);
+  console.log("Current pathname:", window.location.pathname);
 
   try {
     switch (pathname) {
       case "/":
       case "/index.html":
-        displayLatestPosts();
+        await displayLatestPosts();
         break;
       case "/about.html":
-        initializeAboutPage();
+        await initializeAboutPage();
         break;
-      case "/blogposts.html":
-        displayBlogPosts();
-        initializeButtons();
+      case "/posts.html":
+        await displayBlogPosts(); // No await if this is synchronous
+        await initializeButtons(); // No await if this is synchronous
         break;
-      case "/singleblogpost.html":
-        displaySingleBlogPost();
+      case "/post.html":
+        await displaySingleBlogPost();
         break;
       case "/contact.html":
-        initializeContactForm();
+        await initializeContactForm();
         break;
       default:
         console.log("No matching route found");

@@ -1,8 +1,4 @@
-import {
-  fetchBlogPosts,
-  getTotalPosts,
-} from "../../../api/posts/fetchBlogPosts.js";
-import { renderBlogPosts } from "../../../ui/posts/renderBlogPosts.js";
+import { fetchBlogPosts } from "../../../api/posts/fetchBlogPosts.js";
 import { createHtmlForPost } from "../../components/createHtml/createHtmlForBlogPosts.js";
 import { displayMessage } from "../../common/displayMessage.js";
 import { toggleButtonVisibility } from "../../utilities/buttonUtils.js";
@@ -10,10 +6,11 @@ import { toggleButtonVisibility } from "../../utilities/buttonUtils.js";
 let currentPage = 1;
 const perPage = 10;
 let additionalPosts = [];
+let totalPosts = 0;
+let isFetching = false;
 
 function updateButtonVisibility() {
   const hidePostsButton = document.getElementById("hide-posts-button");
-
   if (hidePostsButton) {
     toggleButtonVisibility(
       hidePostsButton,
@@ -28,13 +25,16 @@ function setupButtons() {
 
   if (morePostsButton) {
     morePostsButton.addEventListener("click", async () => {
+      if (isFetching) return;
+      isFetching = true;
+
       currentPage += 1;
 
       try {
-        const morePosts = await fetchBlogPosts(currentPage, perPage);
-        const element = document.querySelector("#posts-container");
+        const { data: morePosts, totalPosts: fetchedTotalPosts } =
+          await fetchBlogPosts(currentPage, perPage);
 
-        if (!morePosts.length) {
+        if (!morePosts || morePosts.length === 0) {
           displayMessage(
             "#notification-message",
             "error",
@@ -44,23 +44,28 @@ function setupButtons() {
           return;
         }
 
+        const element = document.querySelector("#posts-container");
         const postHtml = morePosts.map(createHtmlForPost);
         postHtml.forEach((postElement) => {
           additionalPosts.push(postElement);
           element.appendChild(postElement);
         });
 
-        toggleButtonVisibility(hidePostsButton, true);
+        if (hidePostsButton) {
+          toggleButtonVisibility(hidePostsButton, true);
+        }
 
-        if (currentPage * perPage >= getTotalPosts()) {
+        if (currentPage * perPage >= fetchedTotalPosts) {
           toggleButtonVisibility(morePostsButton, false);
         }
       } catch (error) {
         displayMessage(
           "#notification-message",
           "error",
-          "Error fetching more posts"
+          "Failed to load more blogposts"
         );
+      } finally {
+        isFetching = false;
       }
     });
   }
@@ -75,10 +80,12 @@ function setupButtons() {
 
       additionalPosts = [];
       toggleButtonVisibility(hidePostsButton, false);
-      toggleButtonVisibility(morePostsButton, true);
+
+      if (morePostsButton) {
+        toggleButtonVisibility(morePostsButton, true);
+      }
 
       currentPage -= 1;
-
       updateButtonVisibility();
     });
   }
@@ -86,33 +93,12 @@ function setupButtons() {
   window.addEventListener("scroll", updateButtonVisibility);
 }
 
-async function initialRender() {
-  const morePostsButton = document.getElementById("more-posts-button");
-
-  try {
-    const initialPosts = await fetchBlogPosts(1, perPage);
-    await renderBlogPosts(
-      "#posts-container",
-      initialPosts,
-      currentPage,
-      perPage
-    );
-
-    if (currentPage * perPage < getTotalPosts()) {
-      toggleButtonVisibility(morePostsButton, true);
-    }
-  } catch (error) {
-    displayMessage(
-      "#notification-message",
-      "error",
-      "There was an error fetching the blogposts"
-    );
-  }
-}
-
 export function initializeButtons() {
-  document.addEventListener("DOMContentLoaded", () => {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      setupButtons();
+    });
+  } else {
     setupButtons();
-    initialRender();
-  });
+  }
 }

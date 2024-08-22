@@ -17,7 +17,7 @@ export function renderPostTitles(titles) {
   container.appendChild(list);
 
   const readMoreButton = document.createElement("a");
-  readMoreButton.href = "blogposts.html";
+  readMoreButton.href = "posts.html";
   readMoreButton.textContent = "Read More";
   readMoreButton.classList.add("read-more-button");
   container.appendChild(readMoreButton);

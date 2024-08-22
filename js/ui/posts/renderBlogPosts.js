@@ -1,12 +1,12 @@
 import { createHtmlForPost } from "../components/createHtml/createHtmlForBlogPosts.js";
-import { getTotalPosts } from "../../api/posts/fetchBlogPosts.js";
 import { displayMessage } from "../common/displayMessage.js";
 
 export async function renderBlogPosts(
   targetElement,
   posts = [],
   currentPage,
-  perPage
+  perPage,
+  totalPosts
 ) {
   const element = document.querySelector(targetElement);
   if (!element) {
@@ -34,10 +34,7 @@ export async function renderBlogPosts(
 
   const morePostsButton = document.getElementById("more-posts-button");
   if (morePostsButton) {
-    toggleButtonVisibility(
-      morePostsButton,
-      currentPage * perPage < getTotalPosts()
-    );
+    toggleButtonVisibility(morePostsButton, currentPage * perPage < totalPosts);
   }
 }
 

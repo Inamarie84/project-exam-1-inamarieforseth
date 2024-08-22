@@ -15,7 +15,7 @@ export function initializeNavbar() {
     const menuItems = ["Home", "Runcations", "About", "Contact"];
     const menuLinks = [
       "/index.html",
-      "/blogposts.html",
+      "/posts.html",
       "/about.html",
       "/contact.html",
     ];

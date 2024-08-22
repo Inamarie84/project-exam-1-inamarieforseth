@@ -1,29 +1,10 @@
-import { BASE_URL } from "../../constants/api.js";
+import { fetchPosts } from "../../api/posts/fetchPosts.js";
 
-let totalPosts = 0;
-
-export async function fetchPosts(page, perPage) {
-  const endpoint = "/wp/v2/posts?_embed";
-  const url = `${BASE_URL}${endpoint}&page=${page}&per_page=${perPage}`;
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Failed to fetch posts");
-  }
-  const data = await response.json();
-  const total = parseInt(response.headers.get("X-WP-Total"), 10);
-  totalPosts = total;
-  return { data, totalPosts: total };
-}
-
-export async function fetchBlogPosts(page, perPage) {
+export async function fetchBlogPosts(page = 1, perPage = 10) {
   try {
-    const { data } = await fetchPosts(page, perPage);
-    return data;
+    const { data, totalPosts } = await fetchPosts(page, perPage);
+    return { data, totalPosts };
   } catch (error) {
-    throw error;
+    throw new Error("Failed to fetch blog posts: " + error.message);
   }
-}
-
-export function getTotalPosts() {
-  return totalPosts;
 }

@@ -60,7 +60,7 @@ export function createHtmlForPost(post) {
   if (featuredImageDetails) {
     const imageElement = document.createElement("img");
     imageElement.src = featuredImageDetails.url;
-    imageElement.alt = featuredImageDetails.alt; // Set the alt text
+    imageElement.alt = featuredImageDetails.alt;
     imageElement.classList.add("featured-image");
     postContainer.appendChild(imageElement);
   }
@@ -77,7 +77,7 @@ export function createHtmlForPost(post) {
   postContainer.appendChild(contentElement);
 
   const readMoreLink = document.createElement("a");
-  readMoreLink.href = `singleblogpost.html?id=${id}`;
+  readMoreLink.href = `post.html?id=${id}`;
   readMoreLink.textContent = "Read More";
   readMoreLink.classList.add("read-more-link");
   postContainer.appendChild(readMoreLink);
