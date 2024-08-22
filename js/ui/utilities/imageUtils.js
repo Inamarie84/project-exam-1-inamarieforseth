@@ -1,4 +1,3 @@
-// imageUtils.js
 export function extractFeaturedImageDetails(embedded) {
   if (
     embedded &&

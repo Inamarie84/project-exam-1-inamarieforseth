@@ -32,8 +32,8 @@ async function router() {
         await initializeAboutPage();
         break;
       case "/posts.html":
-        await displayBlogPosts(); // No await if this is synchronous
-        await initializeButtons(); // No await if this is synchronous
+        await displayBlogPosts();
+        await initializeButtons();
         break;
       case "/post.html":
         await displaySingleBlogPost();
